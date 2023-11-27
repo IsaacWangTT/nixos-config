@@ -2,7 +2,7 @@
 
 {
   home.pointerCursor = {
-    package = pkgs.catppuccin-cursors;
+    package = pkgs.catppuccin-cursors.mochaBlue;
     name = "Catppuccin-Mocha-Blue-Cursors";
     size = 16;
     gtk.enable = true;
@@ -14,8 +14,18 @@
   };
   gtk = {
     enable = true;
+    theme = {
+      name = "Catppuccin-Latte-Standard-Blue-Light";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "blue" ];
+        size = "standard";
+        tweaks = [ "rimless" "black" ];
+        variant = "latte";
+      };
+    };
     cursorTheme = {
       name = "Catppuccin-Mocha-Blue-Cursors";
+      package = pkgs.catppuccin-cursors.mochaBlue;
     };
     iconTheme = {
       name = "Papirus-Dark";
