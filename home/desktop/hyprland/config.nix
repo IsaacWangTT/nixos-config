@@ -106,8 +106,9 @@ in
       bind = $mainMod, B, exec, librewolf
       bind = $mainMod, T, exec, kitty
       bind = $mainMod, Q, killactive 
+      bind = $mainMod, E, exec, thunar
       bind = $mainMod SHIFT,X, exec, ${myswaylock}/bin/myswaylock
-      bind = $mainMod, M, exec, pkill -KILL -u isaac
+      bind = $mainMod, L, exec, pkill -KILL -u isaac
       bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, P, pseudo

@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
@@ -14,20 +15,41 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/50c7043f-a749-425b-baa3-d8b157e409b0";
+    {
+      device = "/dev/disk/by-label/myLinux";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
   fileSystems."/efi" =
-    { device = "/dev/disk/by-uuid/1518-92EC";
+    {
+      device = "/dev/disk/by-uuid/1518-92EC";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/629b9360-5d39-41cb-bfed-b781fdeb2363";
+    {
+      device = "/dev/disk/by-label/myLinuxHome";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/media/windows/c" =
+    {
+      device = "/dev/disk/by-label/myWindows";
+      fsType = "ntfs-3g";
+    };
+
+  fileSystems."/media/windows/d" =
+    {
+      device = "/dev/disk/by-label/myWindowsFile";
+      fsType = "ntfs-3g";
+    };
+
+  fileSystems."/media/windows/e" =
+    {
+      device = "/dev/disk/by-label/myWindowsGame";
+      fsType = "ntfs-3g";
     };
 
   swapDevices = [ ];
