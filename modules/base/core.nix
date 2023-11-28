@@ -24,6 +24,7 @@
     git
     killall
     neovim
+    snapper
     tree
     wget
     xdg-utils

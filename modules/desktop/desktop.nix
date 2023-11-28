@@ -48,6 +48,7 @@
     grim
     slurp
     linux-wifi-hotspot
+    btrfs-assistant
   ];
 
   programs = {
