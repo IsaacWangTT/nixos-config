@@ -22,6 +22,7 @@ let
       ./mikasa
 
       ../modules/desktop
+      ../modules/virtualisation
       ../modules/boot/lanzaboote.nix
     ];
     home = [
