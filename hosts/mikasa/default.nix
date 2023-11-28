@@ -67,13 +67,17 @@ in
         libvdpau-va-gl
       ];
     };
+    tuxedo-rs = {
+      enable = true;
+      tailor-gui.enable = true;
+    };
+    tuxedo-keyboard.enable = true;
     pulseaudio.support32Bit = true;
   };
 
 
   environment.systemPackages = with pkgs; [
     nvidia-offload
-    tuxedo-rs
   ];
 
   services.daed.enable = true;
