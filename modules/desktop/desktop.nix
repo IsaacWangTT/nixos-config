@@ -33,6 +33,7 @@
     pkgs.xorg.xeyes
     glfw-wayland
     xwayland
+    pkgs.qt5.qtwayland
     pkgs.qt6.qtwayland
     polkit_gnome
     wev
