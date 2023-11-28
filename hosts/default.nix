@@ -26,12 +26,12 @@ let
       ../modules/lanzaboote.nix
     ];
     home = [
-      ../home/profiles
+      ../home/profiles/mikasa.nix
 
       ../home/desktop/hyprland
-      ../home/programs
-      ../home/shell/fish
       ../home/editors
+      ../home/programs
+      ../home/shell
     ];
   };
 in

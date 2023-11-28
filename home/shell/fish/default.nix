@@ -10,6 +10,5 @@
       ''
       else '''';
     interactiveShellInit = ''set -g fish_greeting'';
-    # plugins = 
   };
 }

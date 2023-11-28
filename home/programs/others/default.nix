@@ -5,6 +5,7 @@
     telegram-desktop
     ranger
 
+    # ranger plugins need
     highlight
   ];
 }

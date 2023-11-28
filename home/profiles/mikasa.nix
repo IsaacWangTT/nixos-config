@@ -1,4 +1,4 @@
-{ config, pkgs, vars, ... }:
+{ pkgs, vars, ... }:
 
 {
   home.username = "${vars.user}";
@@ -7,12 +7,6 @@
     EDITOR = "${vars.editor}";
     TERMINAL = "${vars.terminal}";
   };
-
-  home.packages = with pkgs; [
-    neofetch
-    kitty
-    librewolf
-  ];
 
   home.stateVersion = "23.11";
 }

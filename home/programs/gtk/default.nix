@@ -7,11 +7,7 @@
     size = 16;
     gtk.enable = true;
   };
-  dconf.settings = {
-    "org/gnome/desktop/wm/preferences" = {
-      button-layout = ":";
-    };
-  };
+
   gtk = {
     enable = true;
     theme = {
@@ -47,5 +43,11 @@
       gtk-xft-hintstyle="hintslight"
       gtk-xft-rgba="rgb"
     '';
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = ":";
+    };
   };
 }

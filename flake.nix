@@ -19,6 +19,7 @@
     lanzaboote.url = "github:nix-community/lanzaboote";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    nur.url = "github:nix-community/NUR";
 
     ########################  Some non-flake repositories  ###############################
     # NvChad
