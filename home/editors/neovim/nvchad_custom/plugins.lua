@@ -3,7 +3,7 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
-        "bash",
+				"bash",
 				"python",
 				"nix",
 			},
@@ -20,6 +20,12 @@ local plugins = {
 		config = function()
 			require("plugins.configs.lspconfig")
 			require("custom.configs.lspconfig")
+		end,
+	},
+	{
+		"pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup()
 		end,
 	},
 	{

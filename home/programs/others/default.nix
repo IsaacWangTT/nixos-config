@@ -2,8 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    telegram-desktop
+    # system
     ranger
+
+    # message
+    telegram-desktop
 
     # ranger plugins need
     highlight

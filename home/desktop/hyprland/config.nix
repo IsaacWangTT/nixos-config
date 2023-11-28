@@ -108,7 +108,7 @@ in
       bind = $mainMod, Q, killactive 
       bind = $mainMod SHIFT,X, exec, ${myswaylock}/bin/myswaylock
       bind = $mainMod, M, exec, pkill -KILL -u isaac
-      bind = $mainMod, V, togglefloating, 
+      bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, P, pseudo
       bind = $mainMod, J, togglesplit
