@@ -1,3 +1,32 @@
+{ pkgs, ... }:
+let
+  myswaylock = pkgs.writeShellScriptBin "myswaylock" ''
+    ${pkgs.swaylock-effects}/bin/swaylock  \
+      --hide-keyboard-layout \
+      --indicator-radius 100 \
+      --indicator-thickness 7 \
+      --ring-color cba6f7 \
+      --ring-ver-color 89b4fa \
+      --ring-wrong-color f38ba8 \
+      --ring-clear-color a6e3a1 \
+      --key-hl-color 1e1e2e \
+      --bs-hl-color eba0ac \
+      --text-color 11111b \
+      --text-caps-lock-color 11111b \
+      --line-color 00000000 \
+      --line-ver-color 00000000 \
+      --line-wrong-color 00000000 \
+      --line-clear-color 00000000 \
+      --separator-color 00000000 \
+      --inside-color cba6f7 \
+      --inside-ver-color 89b4fa\
+      --inside-wrong-color f38ba8 \
+      --inside-clear-color a6e3a1 \
+      --color 1e1e2e80 \
+      --clock \
+      --indicator
+  '';
+in
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
@@ -6,7 +35,7 @@
       monitor=,preferred,auto,auto
 
       exec-once = waybar & hyprpaper & mako
-      # exec-once = ~/.config/hypr/scripts/sleep.sh
+      exec-once = swayidle -w timeout 900 'systemctl suspend' before-sleep '${myswaylock}/bin/myswaylock'
 
       env = XCURSOR_SIZE,24
 
@@ -74,16 +103,15 @@
 
       $mainMod = SUPER
 
-      bind = $mainMod, C, exec, ~/.config/hypr/scripts/caffeine.sh
-
       bind = $mainMod, B, exec, librewolf
       bind = $mainMod, T, exec, kitty
-      bind = $mainMod, Q, killactive, 
-      bind = $mainMod, M, exec, pkill -KILL -u isaac, 
+      bind = $mainMod, Q, killactive 
+      bind = $mainMod SHIFT,X, exec, ${myswaylock}/bin/myswaylock
+      bind = $mainMod, M, exec, pkill -KILL -u isaac
       bind = $mainMod, V, togglefloating, 
       bind = $mainMod, A, exec, rofi -show drun
-      bind = $mainMod, P, pseudo,
-      bind = $mainMod, J, togglesplit,
+      bind = $mainMod, P, pseudo
+      bind = $mainMod, J, togglesplit
 
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r

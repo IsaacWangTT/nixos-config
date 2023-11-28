@@ -73,6 +73,7 @@ in
 
   environment.systemPackages = with pkgs; [
     nvidia-offload
+    tuxedo-rs
   ];
 
   services.daed.enable = true;
