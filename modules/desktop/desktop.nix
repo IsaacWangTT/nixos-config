@@ -56,6 +56,7 @@
 
   services = {
     gvfs.enable = true;
+    power-profiles-daemon.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

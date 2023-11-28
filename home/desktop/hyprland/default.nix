@@ -7,7 +7,7 @@
   ];
 
   home.file = {
-    ".config/hypr/scripts".source = ./scripts;
+    # ".config/hypr/scripts".source = ./scripts;
     ".config/hypr/themes".source = "${inputs.catppuccin-hyprland}/themes";
   };
 

@@ -6,7 +6,7 @@
       monitor=,preferred,auto,auto
 
       exec-once = waybar & hyprpaper & mako
-      exec-once = ~/.config/hypr/scripts/sleep.sh
+      # exec-once = ~/.config/hypr/scripts/sleep.sh
 
       env = XCURSOR_SIZE,24
 
