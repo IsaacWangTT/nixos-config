@@ -9,6 +9,7 @@
   };
 
   inputs = {
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     daeuniverse.url = "github:daeuniverse/flake.nix";
     home-manager = {
       url = "github:nix-community/home-manager";

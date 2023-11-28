@@ -22,7 +22,6 @@
       ];
       "custom/launcher" = {
         "format" = " ";
-        "on-click" = "rofi -show drun";
         "tooltip" = false;
       };
       "hyprland/workspaces" = {
