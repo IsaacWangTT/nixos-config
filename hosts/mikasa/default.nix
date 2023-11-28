@@ -18,14 +18,25 @@ in
   networking.hostName = "mikasa";
 
   boot = {
-    loader.efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/efi";
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/efi";
+      };
+      timeout = 10;
     };
     kernelParams = [
       "quiet"
       "splash"
       "nvidia-drm.modest=1"
+    ];
+    supportedFilesystems = [
+      "ext4"
+      "btrfs"
+      "ntfs"
+      "fat"
+      "vfat"
+      "exfat"
     ];
     kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   };
@@ -65,6 +76,11 @@ in
   ];
 
   services.daed.enable = true;
+
+  virtualisation.docker = {
+    storageDriver = "btrfs";
+    enableNvidia = true;
+  };
 
   system.stateVersion = "23.11";
 }

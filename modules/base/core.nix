@@ -1,4 +1,4 @@
-{ pkgs, config, vars, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   networking.networkmanager.enable = true;
@@ -23,6 +23,7 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
+    tree
     wget
     xdg-utils
   ];

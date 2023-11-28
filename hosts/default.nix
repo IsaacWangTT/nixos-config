@@ -21,9 +21,8 @@ let
     nixos = [
       ./mikasa
 
-      ../modules/fonts.nix
-      ../modules/desktop.nix
-      ../modules/lanzaboote.nix
+      ../modules/desktop
+      ../modules/boot/lanzaboote.nix
     ];
     home = [
       ../home/profiles/mikasa.nix
@@ -34,6 +33,15 @@ let
       ../home/shell
     ];
   };
+  myServer-modules = {
+    nixos = [
+      ./myServer
+    ];
+    home = [
+      ../home/profiles/myServer.nix
+    ];
+  };
+
 in
 {
   mikasa = nixosSystem {
@@ -50,8 +58,26 @@ in
           ../home
         ] ++
         mikasa-modules.home;
-       }
+      }
     ] ++
     mikasa-modules.nixos;
+  };
+  myServer = nixosSystem {
+    inherit system;
+    specialArgs = { inherit inputs system vars; };
+    modules = [
+      ../modules
+      inputs.home-manager.nixosModules.default
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit inputs system vars; };
+        home-manager.users.${vars.user}.imports = [
+          ../home
+        ] ++
+        myServer-modules.home;
+      }
+    ] ++
+    myServer-modules.nixos;
   };
 }
