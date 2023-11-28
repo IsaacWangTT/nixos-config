@@ -5,7 +5,8 @@
 
       monitor=,preferred,auto,auto
 
-      exec-once = waybar & hyprpaper
+      exec-once = waybar & hyprpaper & mako
+      exec-once = ~/.config/hypr/scripts/sleep.sh
 
       env = XCURSOR_SIZE,24
 
@@ -72,6 +73,8 @@
       }
 
       $mainMod = SUPER
+
+      bind = $mainMod, C, exec, ~/.config/hypr/scripts/caffeine.sh
 
       bind = $mainMod, B, exec, librewolf
       bind = $mainMod, T, exec, kitty

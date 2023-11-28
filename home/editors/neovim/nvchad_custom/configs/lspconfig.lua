@@ -4,6 +4,7 @@ local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
 local servers = {
+  "bashls",
   "cmake",
   "pylsp",
   "rnix",

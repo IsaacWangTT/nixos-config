@@ -22,6 +22,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    killall
     neovim
     tree
     wget

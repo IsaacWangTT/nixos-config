@@ -29,6 +29,7 @@ let
       ../home/profiles/mikasa.nix
 
       ../home/desktop/hyprland
+      ../home/terminals
       ../home/editors
       ../home/programs
       ../home/shell

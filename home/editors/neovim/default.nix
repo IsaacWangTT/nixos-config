@@ -16,6 +16,10 @@
   };
 
   home.packages = with pkgs; [
+    # bash
+    nodePackages_latest.bash-language-server
+    shfmt
+
     # c/c++
     cmake
     cmake-language-server
