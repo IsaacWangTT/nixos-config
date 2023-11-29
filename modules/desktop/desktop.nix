@@ -74,6 +74,7 @@
 
   services = {
     gvfs.enable = true;
+    flatpak.enable = true;
     power-profiles-daemon.enable = true;
     pipewire = {
       enable = true;
@@ -86,7 +87,9 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          command = ''
+            ${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland
+          '';
         };
       };
     };

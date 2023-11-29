@@ -13,7 +13,7 @@
     sudo.wheelNeedsPassword = false;
   };
 
-  console.font = "LatArCyrHeb-16";
+  console.font = "Lat2-Terminus16";
 
   services = {
     openssh = {

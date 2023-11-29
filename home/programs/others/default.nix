@@ -8,9 +8,6 @@
     # message
     telegram-desktop
 
-    # software
-    flatpak
-
     # ranger plugins need
     highlight
   ];
