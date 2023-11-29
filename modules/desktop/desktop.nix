@@ -41,6 +41,7 @@
       pkgs.qt5.qtwayland
       pkgs.qt6.qtwayland
       xorg.xeyes
+      xorg.xhost
       polkit_gnome
       wev
       wf-recorder
@@ -55,7 +56,6 @@
       grim
       slurp
       linux-wifi-hotspot
-      btrfs-assistant
     ];
     variables.NIXOS_OZONE_WL = "1";
   };

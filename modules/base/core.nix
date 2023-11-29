@@ -31,7 +31,7 @@
     unzip
     zip
     rar
-    snapper
+    timeshift
     tree
     wget
     xdg-utils

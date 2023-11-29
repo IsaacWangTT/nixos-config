@@ -6,7 +6,6 @@
     ranger
 
     # message
-    qq
     telegram-desktop
 
     # software
