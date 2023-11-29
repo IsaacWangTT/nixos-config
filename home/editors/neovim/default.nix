@@ -26,6 +26,10 @@
     gcc
     gdb
 
+    # markdown
+    marksman
+    nodePackages_latest.markdownlint-cli2
+
     # python
     black
     pylint
@@ -38,6 +42,8 @@
     # lua
     lua-language-server
     stylua
+
+    prettierd
 
     # Optional Requirements
     ripgrep

@@ -5,10 +5,12 @@ local lint = null_ls.builtins.diagnostics
 
 local sources = {
 	formatting.black,
+	formatting.preiiterd,
 	formatting.shfmt,
 	formatting.stylua,
 	formatting.nixpkgs_fmt,
 
+	lint.markdownlint_cli2,
 	lint.pylint,
 }
 
