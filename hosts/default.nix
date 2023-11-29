@@ -5,6 +5,7 @@ let
 
   pkgs = import nixpkgs {
     inherit system;
+    overlays = [ inputs.nixgl.overlay ];
   };
 
   nixosSystem = nixpkgs.lib.nixosSystem;

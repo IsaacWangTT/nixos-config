@@ -30,7 +30,7 @@ in
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      source=~/.config/hypr/themes/mocha.conf
+      # source=~/.config/hypr/themes/mocha.conf
 
       monitor=,preferred,auto,auto
 
@@ -103,7 +103,7 @@ in
 
       $mainMod = SUPER
 
-      bind = $mainMod, B, exec, librewolf
+      bind = $mainMod, B, exec, firefox
       bind = $mainMod, T, exec, kitty
       bind = $mainMod, Q, killactive 
       bind = $mainMod, E, exec, thunar

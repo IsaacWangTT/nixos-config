@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    # system
     ranger
 
-    # message
+    spotify
+    qq
     telegram-desktop
 
     # ranger plugins need

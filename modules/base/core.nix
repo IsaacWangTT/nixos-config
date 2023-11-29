@@ -23,7 +23,12 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gcc
+    clang
+    zig
     git
+    gdb
+    glib
     neovim
     psmisc
     p7zip
