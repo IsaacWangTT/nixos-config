@@ -51,6 +51,12 @@ in
     kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   };
 
+  boot.plymouth = {
+    enable = true;
+    themePackages = [ (pkgs.catppuccin-plymouth.override { variant = "mocha"; }) ];
+    theme = "catppuccin-mocha";
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {
