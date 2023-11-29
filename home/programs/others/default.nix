@@ -6,7 +6,11 @@
     ranger
 
     # message
+    qq
     telegram-desktop
+
+    # software
+    flatpak
 
     # ranger plugins need
     highlight

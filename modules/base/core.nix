@@ -22,8 +22,8 @@
 
   environment.systemPackages = with pkgs; [
     git
-    killall
     neovim
+    psmisc
     snapper
     tree
     wget
