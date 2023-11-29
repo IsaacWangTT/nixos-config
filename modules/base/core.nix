@@ -13,6 +13,8 @@
     sudo.wheelNeedsPassword = false;
   };
 
+  console.font = "LatArCyrHeb-16";
+
   services = {
     openssh = {
       enable = true;
@@ -24,6 +26,11 @@
     git
     neovim
     psmisc
+    p7zip
+    atool
+    unzip
+    zip
+    rar
     snapper
     tree
     wget

@@ -87,7 +87,6 @@ in
       enable = true;
       tailor-gui.enable = true;
     };
-    tuxedo-keyboard.enable = true;
     pulseaudio.support32Bit = true;
   };
 

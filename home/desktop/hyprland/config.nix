@@ -114,6 +114,9 @@ in
       bind = $mainMod, P, pseudo
       bind = $mainMod, J, togglesplit
 
+      bind = ,Print, exec, grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%s.png')
+      bind = SHIFT, Print, exec, grim $HOME/Pictures/Screenshots/$(date +'%s.png')
+
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
