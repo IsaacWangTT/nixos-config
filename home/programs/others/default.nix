@@ -7,6 +7,7 @@
     spotify
     qq
     telegram-desktop
+    tidal-hifi
 
     # ranger plugins need
     highlight
