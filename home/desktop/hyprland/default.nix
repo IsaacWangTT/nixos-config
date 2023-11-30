@@ -17,7 +17,7 @@
 
   home.packages = with pkgs; [
     pamixer
-    inputs.hyprpaper.packages.${system}.hyprpaper
+    hyprpaper
     swaylock-effects
     swayidle
   ];

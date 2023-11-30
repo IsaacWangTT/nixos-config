@@ -16,7 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprpaper.url = "github:hyprwm/hyprpaper";
     lanzaboote.url = "github:nix-community/lanzaboote";
     nixGL.url = "github:nix-community/nixGL";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -61,7 +60,7 @@
 
     substituters = [
       "https://isaacwangtt.cachix.org"
-      # "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
       "https://hyprland.cachix.org"
     ];

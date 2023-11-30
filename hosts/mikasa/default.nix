@@ -48,6 +48,7 @@ in
       "vfat"
       "exfat"
     ];
+    resumeDevice = "/dev/zram0";
     kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   };
 
