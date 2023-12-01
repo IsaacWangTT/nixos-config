@@ -11,7 +11,6 @@
       set -g fish_greeting ""
       set -g pure_symbol_prompt " ❯"
       set -g pure_symbol_ssh_prefix " "
-      set -g pure_enable_single_line_prompt true
     '';
     shellAliases = {
       l = "ls -ahl";
