@@ -98,10 +98,15 @@ in
 
   services.daed.enable = true;
 
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_15;
+  };
+
   virtualisation.docker = {
     storageDriver = "btrfs";
     enableNvidia = true;
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
