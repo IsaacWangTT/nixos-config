@@ -8,6 +8,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      n
       set -g fish_greeting ""
       set -g pure_enable_single_line_prompt true
       set -g pure_symbol_prompt " ❯"

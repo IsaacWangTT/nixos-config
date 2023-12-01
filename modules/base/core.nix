@@ -13,7 +13,11 @@
     sudo.wheelNeedsPassword = false;
   };
 
-  console.font = "Lat2-Terminus16";
+  console = {
+    earlySetup = true;
+    packages = [ pkgs.terminus_font ];
+    font = "ter-u16n";
+  };
 
   services = {
     openssh = {

@@ -96,9 +96,10 @@ in
       bind = $mainMod, T, exec, kitty
       bind = $mainMod, Q, killactive 
       bind = $mainMod, F, fullscreen
+      bind = $mainMod, P, exec, wlogout --protocol layer-shell
       bind = $mainMod, E, exec, thunar
       bind = $mainMod SHIFT,X, exec, ${myswaylock}/bin/myswaylock
-      bind = $mainMod, L, exec, pkill -KILL -u isaac
+      bind = $mainMod, L, exec, pkill -KILL -u $USER
       bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, J, togglesplit
