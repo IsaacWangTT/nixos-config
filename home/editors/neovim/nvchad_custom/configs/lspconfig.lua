@@ -5,7 +5,9 @@ local capabilities = configs.capabilities
 local lspconfig = require("lspconfig")
 local servers = {
 	"bashls",
+	"cssls",
 	"cmake",
+	"html",
 	"marksman",
 	"pylsp",
 	"rnix",

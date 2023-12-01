@@ -3,54 +3,80 @@
     settings = [{
       "layer" = "top";
       "position" = "top";
+
       modules-left = [
-        "custom/launcher"
+        "custom/icon"
         "hyprland/workspaces"
-        "temperature"
       ];
+
       modules-center = [
-        "clock"
+        "hyprland/window"
       ];
+
       modules-right = [
-        "pulseaudio"
+        "wireplumber"
         "backlight"
-        "memory"
-        "cpu"
         "network"
         "battery"
+        "clock"
         "tray"
       ];
-      "custom/launcher" = {
-        "format" = " ";
+
+      "custom/icon" = {
+        "format" = "";
         "tooltip" = false;
       };
+
       "hyprland/workspaces" = {
-        "format" = "{name}";
-        "on-click" = "activate";
-        "persistent_workspaces" = {
+        "format" = "{icon}";
+        "format-icons" = {
+          "default" = "";
+        };
+        "persistent-workspaces" = {
           "1" = [ ];
           "2" = [ ];
           "3" = [ ];
           "4" = [ ];
         };
       };
-      "backlight" = {
-        "device" = "intel_backlight";
-        "on-scroll-up" = "light -A 5";
-        "on-scroll-down" = "light -U 5";
-        "format" = "{icon} {percent}%";
-        "format-icons" = [ "󰃝" "󰃞" "󰃟" "󰃠" ];
+
+      "hyprland/window" = {
+        "rewrite" = {
+          "(.*) — Mozilla Firefox" = " $1";
+        };
       };
-      "pulseaudio" = {
+
+      "wireplumber" = {
         "scroll-step" = 1;
+        "on-click" = "pamixer -t";
         "format" = "{icon} {volume}%";
         "format-muted" = "󰖁 Muted";
         "format-icons" = {
           "default" = [ "" "" "" ];
         };
-        "on-click" = "pamixer -t";
-        "tooltip" = false;
+        "tooltip" = true;
+        "tooltip-format" = "{volume}%";
       };
+
+      "network" = {
+        "format-wifi" = "󰖩 {essid}";
+        "format-disconnected" = "󰖪 ";
+        "format-ethernet" = "󰀂 ";
+        "interval" = 1;
+        "tooltop" = true;
+        "tooltip-format" = ''
+          Strength: {signalStrength}%
+          Upload: {bandwidthUpBytes}
+          Download: {bandwidthDownBytes}'';
+      };
+
+      "backlight" = {
+        "device" = "intel_backlight";
+        "on-scroll-up" = "light -A 1";
+        "on-scroll-down" = "light -U 1";
+        "format" = " {percent}%";
+      };
+
       "battery" = {
         "interval" = 10;
         "states" = {
@@ -61,39 +87,17 @@
         "format-icons" = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
         "format-full" = "{icon} {capacity}%";
         "format-charging" = "󰂄 {capacity}%";
-        "tooltip" = false;
       };
+
       "clock" = {
         "interval" = 1;
-        "format" = " {:%I:%M %p %b %d}";
+        "format" = " {:%I:%M}";
         "tooltip" = true;
-        "tooltip-format" = "<tt>{calendar}</tt>";
+        "tooltip-format" = "{:%Y-%m-%d %I:%H:%S}";
       };
-      "memory" = {
-        "interval" = 1;
-        "format" = "󰍛 {percentage}%";
-        "states" = {
-          "warning" = 85;
-        };
-      };
-      "cpu" = {
-        "interval" = 1;
-        "format" = "󰻠 {usage}%";
-      };
-      "network" = {
-        "format-disconnected" = "󰯡 Disconnected";
-        "format-ethernet" = "󰀂 {ifname} ({ipaddr})";
-        "format-linked" = "󰖪 {essid} (No IP)";
-        "format-wifi" = "󰖩 {essid}";
-        "interval" = 1;
-        "tooltip" = false;
-      };
-      "temperature" = {
-        "tooltip" = false;
-        "format" = " {temperatureC}°C";
-      };
+
       "tray" = {
-        "icon-size" = 15;
+        "icon-size" = 18;
         "spacing" = 5;
       };
     }];

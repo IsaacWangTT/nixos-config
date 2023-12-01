@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "catppuccin-fish": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698929621,
+        "narHash": "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=",
+        "owner": "catppuccin",
+        "repo": "fish",
+        "rev": "0ce27b518e8ead555dec34dd8be3df5bd75cff8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "fish",
+        "type": "github"
+      }
+    },
     "catppuccin-hyprland": {
       "flake": false,
       "locked": {
@@ -97,6 +113,22 @@
         "type": "github"
       }
     },
+    "catppuccin-waybar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1678438606,
+        "narHash": "sha256-WLJMA2X20E5PCPg0ZPtSop0bfmu+pLImP9t8A8V4QK8=",
+        "owner": "catppuccin",
+        "repo": "waybar",
+        "rev": "f74ab1eecf2dcaf22569b396eed53b2b2fbe8aff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "waybar",
+        "type": "github"
+      }
+    },
     "chaotic": {
       "inputs": {
         "compare-to": "compare-to",
@@ -107,11 +139,11 @@
         "yafas": "yafas"
       },
       "locked": {
-        "lastModified": 1701281948,
-        "narHash": "sha256-l18n5B1DG6o63Sugtcdwapp91q2lhUzMjjR4SfuFYBc=",
+        "lastModified": 1701362606,
+        "narHash": "sha256-rtVwebz6emWNGFwD4sQFjbww6HEs6702b/op4IugduU=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "1bca2465c2d9b5c3daa530e0f97761fb60803480",
+        "rev": "45d2aa68e9c0bbb42737c0b645e82b3119b81595",
         "type": "github"
       },
       "original": {
@@ -478,11 +510,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1701310767,
-        "narHash": "sha256-aET9rumYD4L3VuZfHdJh8AbtOUzPYeIGTolmgTfZIrs=",
+        "lastModified": 1701390228,
+        "narHash": "sha256-TgwDIVrvU6CRByYQT/PCKXrPpcUcDOx2orm0UIHf+vc=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "776f944619168e1812e7f8bee0258757fed987a4",
+        "rev": "ab40f240c3211412641fdf05b52bf0f1b033fa7d",
         "type": "github"
       },
       "original": {
@@ -834,11 +866,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1701318759,
-        "narHash": "sha256-UluZUnwljLIuOM6FSAfdBH1xYowH42n3fI/EZXrN5jA=",
+        "lastModified": 1701387472,
+        "narHash": "sha256-CTCMEV9iCvS+DyBFVB9vJTIH1qsHh6BkdlQbyNM1owk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "75eaaade3d6923aba0ce92fd06b3fc070742b759",
+        "rev": "38a400bdf1c847cb7b7ff0fc9c13492e6dfd2708",
         "type": "github"
       },
       "original": {
@@ -946,9 +978,11 @@
         "catppuccin-btop": "catppuccin-btop",
         "catppuccin-cava": "catppuccin-cava",
         "catppuccin-fcitx5": "catppuccin-fcitx5",
+        "catppuccin-fish": "catppuccin-fish",
         "catppuccin-hyprland": "catppuccin-hyprland",
         "catppuccin-kitty": "catppuccin-kitty",
         "catppuccin-rofi": "catppuccin-rofi",
+        "catppuccin-waybar": "catppuccin-waybar",
         "chaotic": "chaotic",
         "daeuniverse": "daeuniverse",
         "home-manager": "home-manager_2",
@@ -1102,18 +1136,18 @@
       "flake": false,
       "locked": {
         "host": "gitlab.freedesktop.org",
-        "lastModified": 1701291624,
-        "narHash": "sha256-SWmzxn3gTyZOGEHgSDUJjJdoEKtt/kV6uWrUDx4JCC4=",
+        "lastModified": 1701368958,
+        "narHash": "sha256-7kvyoA91etzVEl9mkA/EJfB6z/PltxX7Xc4gcr7/xlo=",
         "owner": "wlroots",
         "repo": "wlroots",
-        "rev": "d7ecdad4e082cb5817806348de198679a11b35df",
+        "rev": "5d639394f3e83b01596dcd166a44a9a1a2583350",
         "type": "gitlab"
       },
       "original": {
         "host": "gitlab.freedesktop.org",
         "owner": "wlroots",
         "repo": "wlroots",
-        "rev": "d7ecdad4e082cb5817806348de198679a11b35df",
+        "rev": "5d639394f3e83b01596dcd166a44a9a1a2583350",
         "type": "gitlab"
       }
     },

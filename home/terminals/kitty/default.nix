@@ -13,5 +13,6 @@
       url_color = "red";
       url_style = "dotted";
     };
+    shellIntegration.enableFishIntegration = true;
   };
 }

@@ -4,7 +4,11 @@ local plugins = {
 		opts = {
 			ensure_installed = {
 				"bash",
+				"css",
+				"fish",
+				"html",
 				"python",
+				"markdown",
 				"nix",
 			},
 		},

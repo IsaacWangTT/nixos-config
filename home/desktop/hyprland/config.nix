@@ -30,14 +30,38 @@ in
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      # source=~/.config/hypr/themes/mocha.conf
-
-      monitor=,preferred,auto,auto
+      source=~/.config/hypr/themes/mocha.conf
 
       exec-once = waybar & hyprpaper & mako
       exec-once = swayidle -w timeout 900 'systemctl suspend' before-sleep '${myswaylock}/bin/myswaylock'
 
-      env = XCURSOR_SIZE,24
+      monitor = eDP-1, 1920x1080@144, auto, auto
+
+      general {
+        gaps_in = 5
+        gaps_out = 10
+        border_size = 3
+        col.active_border = $blue
+        col.inactive_border = $surface0
+        cursor_inactive_timeout = 60
+      }
+
+      decoration {
+        rounding = 10
+      }
+
+      animations {
+        enabled = true
+        bezier = easeInSine, 0.12, 0, 0.39, 0
+        bezier = easeOutSine, 0.61, 1, 0.88, 1
+        bezier = easeInOutSine, 0.37, 0, 0.63, 1
+
+        animation = windowsIn, 1, 2, easeInSine, slide
+        animation = windowsOut, 1, 2, easeOutSine, slide
+        animation = windowsMove, 1, 3, easeInSine, popin 80%
+        animation = border, 1, 2, easeInSine
+        animation = workspaces, 1, 2, easeInOutSine, slidevert
+      }
 
       input {
         kb_layout = us
@@ -45,52 +69,16 @@ in
         kb_model =
         kb_options =
         kb_rules =
-
+        numlock_by_default = true
+        sensitivity = 0
         follow_mouse = 1
 
         touchpad {
+          disable_while_typing = true
           natural_scroll = true
         }
-
-        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-        numlock_by_default = true
       }
-
-      general {
-        gaps_in = 3
-        gaps_out = 5
-        border_size = 2
-        col.active_border = 0xFFB4A1DB
-        col.inactive_border = 0xFF343A40
-      }
-
-      decoration {
-        rounding = 5
-        blur {
-          enabled = true
-          size = 3
-          passes = 1
-        }
-      }
-
-      animations {
-        enabled = yes
-
-        animation=windows,1,8,default,popin 80%
-        animation=fadeOut,1,8,default
-        animation=fadeIn,1,8,default
-        animation=workspaces,1,8,default
-      }
-
-      dwindle {
-        pseudotile = yes
-        preserve_split = yes
-      }
-
-      master {
-        new_is_master = true
-      }
-
+      
       gestures {
         workspace_swipe = true
       }
@@ -99,6 +87,7 @@ in
         disable_hyprland_logo = true
         disable_splash_rendering = true
         mouse_move_enables_dpms = true
+        key_press_enables_dpms = true
       }
 
       $mainMod = SUPER
@@ -122,12 +111,12 @@ in
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind=,XF86AudioRaiseVolume,exec, pamixer -i 5
-      bind=,XF86AudioLowerVolume,exec, pamixer -d 5
+      bind=,XF86AudioRaiseVolume,exec, pamixer -i 2
+      bind=,XF86AudioLowerVolume,exec, pamixer -d 2
       bind=,XF86AudioMute,exec, pamixer -t
       bind=,XF86AudioMicMute,exec, pamixer --default-source -t
-      bind=,XF86MonBrightnessUp,exec, light -A 5
-      bind=,XF86MonBrightnessDown, exec, light -U 5
+      bind=,XF86MonBrightnessUp,exec, light -A 2
+      bind=,XF86MonBrightnessDown, exec, light -U 2
 
       bind = $mainMod, 1, workspace, 1
       bind = $mainMod, 2, workspace, 2

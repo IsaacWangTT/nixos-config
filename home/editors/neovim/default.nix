@@ -26,9 +26,15 @@
     gcc
     gdb
 
+    # css
+    nodePackages_latest.vscode-css-languageserver-bin
+
+    # html
+    nodePackages_latest.vscode-html-languageserver-bin
+
     # markdown
     marksman
-    nodePackages_latest.markdownlint-cli2
+    nodePackages_latest.markdownlint-cli
 
     # python
     black

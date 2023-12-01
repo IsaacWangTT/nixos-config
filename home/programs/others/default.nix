@@ -2,7 +2,9 @@
 
 {
   home.packages = with pkgs; [
+    cmatrix
     ranger
+    sl
 
     spotify
     qq

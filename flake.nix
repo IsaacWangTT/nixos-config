@@ -41,6 +41,10 @@
       url = "github:catppuccin/fcitx5";
       flake = false;
     };
+    catppuccin-fish = {
+      url = "github:catppuccin/fish";
+      flake = false;
+    };
     catppuccin-hyprland = {
       url = "github:catppuccin/hyprland";
       flake = false;
@@ -51,6 +55,10 @@
     };
     catppuccin-rofi = {
       url = "github:catppuccin/rofi/888efaf5634b061c95870dd115efb6e78756d54d";
+      flake = false;
+    };
+    catppuccin-waybar = {
+      url = "github:catppuccin/waybar";
       flake = false;
     };
   };

@@ -1,4 +1,4 @@
-{ inputs, pkgs, system, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -26,16 +26,19 @@
 
   home = {
     sessionVariables = {
-      QT_SCALE_FACTOR = "1";
+      GDK_BACKEND = "wayland,x11";
+      QT_QPA_PLATFORM = "wayland;xcb";
       SDL_VIDEODRIVER = "wayland";
-      _JAVA_AWT_WM_NONREPARENTING = "1";
-      QT_QPA_PLATFORM = "wayland";
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       CLUTTER_BACKEND = "wayland";
       XDG_CURRENT_DESKTOP = "Hyprland";
-      XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "Hyprland";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      LIBVA_DRIVER_NAME = "nvidia";
+      WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
     };
   };
 }

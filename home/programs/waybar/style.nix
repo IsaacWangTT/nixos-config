@@ -1,112 +1,115 @@
 {
   programs.waybar = {
     style = ''
+      @import "./themes/mocha.css";
+
       * {
         font-family: "JetBrainsMono Nerd Font";
-        font-size: 12pt;
+        font-size: 15px;
         font-weight: bold;
-        border-radius: 0px;
-        transition-property: background-color;
-        transition-duration: 0.5s;
       }
-      @keyframes blink_red {
-        to {
-          background-color: rgb(242, 143, 173);
-          color: rgb(26, 24, 38);
-        }
+
+      .warning,
+      .critical,
+      .urgent {
+        background-color: @red;
       }
-      .warning, .critical, .urgent {
-        animation-name: blink_red;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
+
       window#waybar {
         background-color: transparent;
       }
-      window > box {
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: 5px;
-        background-color: #3b4252;
-      }
+
       #workspaces {
-        padding-left: 0px;
-        padding-right: 4px;
+        border: 2px solid @overlay2;
+        border-radius: 2rem;
+        background-color: @surface2;
+        margin: 7px 3px 0 7px;
       }
+
       #workspaces button {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 6px;
-        padding-right: 6px;
-        color:#D8DEE9;
+        border-radius: 2rem;
+        color: @mauve;
+        margin: 5px 2px;
+        padding: 0 12px;
+        padding-right: 18px;
       }
+
       #workspaces button.active {
-        background-color: rgb(181, 232, 224);
-        color: rgb(26, 24, 38);
+        color: @teal;
       }
-      #workspaces button.urgent {
-        color: rgb(26, 24, 38);
-      }
+
       #workspaces button:hover {
-        background-color: #B38DAC;
-        color: rgb(26, 24, 38);
+        color: @rosewater;
       }
-      tooltip {
-        background: #3b4253;
+
+      #custom-icon,
+      #window,
+      #wireplumber,
+      #backlight,
+      #network,
+      #battery,
+      #clock,
+      #tray {
+        background-color: @surface2;
+        margin: 7px 3px 0px 7px;
+        padding: 10px 10px;
+        border-radius: 1rem;
+        border: 2px solid @overlay2;
       }
-      tooltip label {
-        color: #E4E8EF;
+
+      #custom-icon {
+        color: @text;
+        padding-right: 15px;
       }
-      #custom-launcher {
-        font-size: 20px;
-        padding-left: 8px;
-        padding-right: 6px;
-        color: #7ebae4;
+
+      #window {
+        color: @peach;
       }
-      #clock, #memory, #temperature, #cpu, #temperature, #backlight, #pulseaudio, #network, #battery {
-        padding-left: 10px;
-        padding-right: 10px;
+
+      #wireplumber {
+        color: @blue;
       }
-      #memory {
-        color: #8EBBBA;
+
+      #wireplumber.muted {
+        color: @red;
       }
-      #cpu {
-        color: #B38DAC;
-      }
-      #clock {
-        color: #E4E8EF;
-      }
-      #temperature {
-        color: #80A0C0;
-      }
+
       #backlight {
-        color: #A2BD8B;
+        color: @lavender;
       }
-      #pulseaudio {
-        color: #E9C98A;
-      }
+
       #network {
-        color: #99CC99;
+        color: @sapphire;
       }
 
       #network.disconnected {
-        color: #CCCCCC;
+        color: @red;
       }
-      #battery.charging, #battery.full, #battery.discharging {
-        color: #CF876F;
+
+      #battery {
+        color: @green;
       }
-      #battery.critical:not(.charging) {
-        color: #D6DCE7;
+
+      #clock {
+        color: @sky;
       }
+
       #tray {
-        padding-right: 8px;
-        padding-left: 10px;
+        padding: 0 7px;
       }
+
       #tray menu {
-        background: #3b4252;
-        color: #DEE2EA;
+        background-color: @surface2;
+        color: @text;
+      }
+
+      tooltip {
+        background-color: @surface2;
+        border: 2px solid @overlay2;
+      }
+
+      tooltip label {
+        color: @text;
       }
     '';
   };
