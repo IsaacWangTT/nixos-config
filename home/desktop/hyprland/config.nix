@@ -95,12 +95,12 @@ in
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, T, exec, kitty
       bind = $mainMod, Q, killactive 
+      bind = $mainMod, F, fullscreen
       bind = $mainMod, E, exec, thunar
       bind = $mainMod SHIFT,X, exec, ${myswaylock}/bin/myswaylock
       bind = $mainMod, L, exec, pkill -KILL -u isaac
       bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
-      bind = $mainMod, P, pseudo
       bind = $mainMod, J, togglesplit
 
       bind = ,Print, exec, grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%s.png')

@@ -22,7 +22,7 @@
     enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
-    config.common.default = "*";
+    config.common.default = "gtk";
   };
 
   environment = {
@@ -62,19 +62,17 @@
 
   programs = {
     light.enable = true;
-  };
-
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
   };
 
   services = {
     gvfs.enable = true;
-    flatpak.enable = true;
     power-profiles-daemon.enable = true;
     pipewire = {
       enable = true;

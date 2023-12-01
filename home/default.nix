@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.chaotic.homeManagerModules.default
+    inputs.flatpaks.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default
     inputs.nur.hmModules.nur
   ];

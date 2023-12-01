@@ -11,6 +11,7 @@
   inputs = {
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     daeuniverse.url = "github:daeuniverse/flake.nix";
+    flatpaks.url = "github:GermanBread/declarative-flatpak";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
