@@ -10,8 +10,6 @@
     theme = "Catppuccin-Mocha";
     settings = {
       background_opacity = "0.85";
-      url_color = "red";
-      url_style = "dotted";
     };
     shellIntegration.enableFishIntegration = true;
   };

@@ -43,6 +43,8 @@
       "hyprland/window" = {
         "rewrite" = {
           "(.*) — Mozilla Firefox" = " $1";
+          "(.*) - fish" = "> [$1]";
+          "(.*) - sudo" = "$ [$1]";
         };
       };
 
