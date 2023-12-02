@@ -17,34 +17,43 @@
   };
   services.blueman.enable = true;
 
-  security.pam.services.swaylock = { };
+  security.pam.services.swaylock = { }; # fix swaylock password
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr ];
     config.common.default = "gtk";
   };
 
   environment = {
     systemPackages = with pkgs; [
+      # System Tools
       libnotify
-      wl-clipboard
+      polkit_gnome
+
+      # Wayland
       wlr-randr
       wayland
       wayland-scanner
       wayland-utils
       egl-wayland
       wayland-protocols
-      pkgs.xorg.xeyes
       glfw-wayland
       xwayland
       pkgs.qt5.qtwayland
       pkgs.qt6.qtwayland
+
+      # Xorg Tools
+      pkgs.xorg.xeyes
       xorg.xeyes
       xorg.xhost
-      polkit_gnome
+
+      # Wayland Tools
+      wl-clipboard
       wev
       wf-recorder
+
+      # Sound
       alsa-lib
       alsa-utils
       flac
@@ -56,33 +65,41 @@
       grim
       slurp
       linux-wifi-hotspot
+
     ];
     variables.NIXOS_OZONE_WL = "1";
   };
 
-  programs = {
-    light.enable = true;
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
-    };
+  programs.light.enable = true; # light control
+
+  programs.thunar = {
+    enable = true; # file manager
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
   };
 
   services = {
     gvfs.enable = true;
     power-profiles-daemon.enable = true;
+  };
+
+  services = {
     pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
+      enable = true; # sound
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
       pulse.enable = true;
       jack.enable = true;
     };
+  };
+
+  services = {
     greetd = {
-      enable = true;
+      enable = true; # desktop manager
       settings = {
         default_session = {
           command = ''

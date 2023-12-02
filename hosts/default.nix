@@ -11,6 +11,7 @@
         modules = [
           ./mikasa
           ../modules/desktop
+          ../modules/hardware
           ../modules/virtualisation
           ../modules/boot/lanzaboote.nix
           {

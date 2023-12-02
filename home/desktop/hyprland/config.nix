@@ -44,6 +44,13 @@ in
         col.active_border = $blue
         col.inactive_border = $surface0
         cursor_inactive_timeout = 60
+        layout = dwindle
+      }
+
+      
+      dwindle {
+        pseudotile = false
+        preserve_split = true
       }
 
       decoration {
@@ -78,7 +85,7 @@ in
           natural_scroll = true
         }
       }
-      
+       
       gestures {
         workspace_swipe = true
       }
@@ -103,6 +110,7 @@ in
       bind = $mainMod, V, togglefloating
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, J, togglesplit
+      bind = $mainMod SHIFT, P, pseudo
 
       bind = ,Print, exec, grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%s.png')
       bind = SHIFT, Print, exec, grim $HOME/Pictures/Screenshots/$(date +'%s.png')

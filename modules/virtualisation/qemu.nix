@@ -1,16 +1,22 @@
 { pkgs, vars, ... }:
 
 {
-  environment = {
-    systemPackages = with pkgs; [
-      virt-manager
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    virt-manager
+  ];
 
   virtualisation = {
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+      };
+    };
   };
 
   networking.firewall.trustedInterfaces = [ "virbr0" ];
-  users.groups.libvirtd.members = [ "${vars.user}" ];
+  users.groups = {
+    libvirtd.members = [ "root" "${vars.user}" ];
+    kvm.members = [ "root" "${vars.user}" ];
+  };
 }
