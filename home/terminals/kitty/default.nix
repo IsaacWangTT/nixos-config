@@ -1,4 +1,4 @@
-{ inputs, vars, ... }:
+{ inputs, ... }:
 
 {
   home.file.".config/kitty/themes".source = "${inputs.catppuccin-kitty}/themes";

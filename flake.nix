@@ -1,35 +1,62 @@
 {
   description = "Isaac Wang's NixOS Configuration";
-  outputs = inputs @ { self, nixpkgs, ... }: {
-    nixosConfigurations = (
-      import ./hosts {
-        inherit inputs nixpkgs;
-      }
-    );
-  };
+  outputs = inputs @ { self, ... }:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+      imports = [
+        ./home/profiles
+        ./hosts
+        ./modules
+      ] ++ [
+        inputs.flake-root.flakeModule
+        inputs.treefmt-nix.flakeModule
+      ];
+      perSystem = { config, pkgs, system, ... }: {
+        _module.args.pkgs = import inputs.nixpkgs { inherit system; };
+
+        treefmt.config = {
+          inherit (config.flake-root) projectRootFile;
+          programs.nixpkgs-fmt.enable = true;
+          programs.beautysh.enable = true;
+        };
+
+        formatter = config.treefmt.build.wrapper;
+      };
+    };
+
 
   inputs = {
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    daeuniverse.url = "github:daeuniverse/flake.nix";
-    flatpaks.url = "github:GermanBread/declarative-flatpak";
+    #####  Some flake repositories  #####
+    # Software Packages
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # Chaotic's Nyx
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Nixpkgs
+    nur.url = "github:nix-community/NUR"; # NUR
+
+    # System Tools
+    daeuniverse.url = "github:daeuniverse/flake.nix"; # Proxy
+    flake-parts.url = "github:hercules-ci/flake-parts"; # Nix Flakes Framework
+    flake-root.url = "github:srid/flake-root"; # Find Project Root Directory
+    flatpaks.url = "github:GermanBread/declarative-flatpak"; # Declarative Flatpak
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager"; # Home Manager
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
-    lanzaboote.url = "github:nix-community/lanzaboote";
-    nixGL.url = "github:nix-community/nixGL";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-    nur.url = "github:nix-community/NUR";
+    lanzaboote.url = "github:nix-community/lanzaboote"; # Secure Boot
+    nixGL.url = "github:nix-community/nixGL"; # OpenGL
+    treefmt-nix.url = "github:numtide/treefmt-nix"; # Format
 
-    ########################  Some non-flake repositories  ###############################
+    # Desktop Environment
+    hyprland.url = "github:hyprwm/Hyprland"; # Hyprland
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland"; # Wayland Packages
+
+    #####  Some non-flake repositories  #####
     # NvChad
     nvchad = {
+      # Enhance Neovim
       url = "github:NvChad/NvChad";
       flake = false;
     };
-    ########################  Color Schemes  #########################################
+    #####  Color Schemes  #####
     catppuccin-btop = {
       url = "github:catppuccin/btop";
       flake = false;
@@ -74,7 +101,6 @@
       "https://hyprland.cachix.org"
     ];
 
-    # nix community's cache server
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://nixpkgs-wayland.cachix.org"
