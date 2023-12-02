@@ -100,6 +100,9 @@
 
       #tray menu {
         background-color: @surface2;
+      }
+
+      #tray menu > * {
         color: @text;
       }
 

@@ -1,39 +1,12 @@
 { pkgs, ... }:
+
 let
-  myswaylock = pkgs.writeShellScriptBin "myswaylock" ''
-    ${pkgs.swaylock-effects}/bin/swaylock  \
-      --hide-keyboard-layout \
-      --indicator-radius 100 \
-      --indicator-thickness 7 \
-      --ring-color cba6f7 \
-      --ring-ver-color 89b4fa \
-      --ring-wrong-color f38ba8 \
-      --ring-clear-color a6e3a1 \
-      --key-hl-color 1e1e2e \
-      --bs-hl-color eba0ac \
-      --text-color 11111b \
-      --text-caps-lock-color 11111b \
-      --line-color 00000000 \
-      --line-ver-color 00000000 \
-      --line-wrong-color 00000000 \
-      --line-clear-color 00000000 \
-      --separator-color 00000000 \
-      --inside-color cba6f7 \
-      --inside-ver-color 89b4fa\
-      --inside-wrong-color f38ba8 \
-      --inside-clear-color a6e3a1 \
-      --color 1e1e2e80 \
-      --clock \
-      --indicator
-  '';
+  scripts = import ./scripts/launch_waybar.nix { inherit pkgs; };
 in
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
       source=~/.config/hypr/themes/mocha.conf
-
-      exec-once = waybar & hyprpaper & mako
-      exec-once = swayidle -w timeout 900 'systemctl suspend' before-sleep '${myswaylock}/bin/myswaylock'
 
       monitor = eDP-1, 1920x1080@144, auto, auto
 
@@ -46,10 +19,9 @@ in
         cursor_inactive_timeout = 60
         layout = dwindle
       }
-
       
       dwindle {
-        pseudotile = false
+        pseudotile = true
         preserve_split = true
       }
 
@@ -99,34 +71,47 @@ in
 
       $mainMod = SUPER
 
+      #----------#
+      # software #
+      #----------#
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, T, exec, kitty
+      bind = $mainMod, E, exec, thunar
+      bind = $mainMod, A, exec, rofi -show drun
+      bind = $mainMod, L, exec, wlogout --protocol layer-shell
+
+      #--------#
+      # motion #
+      #--------#
       bind = $mainMod, Q, killactive 
       bind = $mainMod, F, fullscreen
-      bind = $mainMod, P, exec, wlogout --protocol layer-shell
-      bind = $mainMod, E, exec, thunar
-      bind = $mainMod SHIFT,X, exec, ${myswaylock}/bin/myswaylock
-      bind = $mainMod, L, exec, pkill -KILL -u $USER
       bind = $mainMod, V, togglefloating
-      bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, J, togglesplit
-      bind = $mainMod SHIFT, P, pseudo
+      bind = $mainMod, P, pseudo
 
       bind = ,Print, exec, grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'%s.png')
       bind = SHIFT, Print, exec, grim $HOME/Pictures/Screenshots/$(date +'%s.png')
 
+      #------------#
+      # move focus #
+      #------------#
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind=,XF86AudioRaiseVolume,exec, pamixer -i 2
-      bind=,XF86AudioLowerVolume,exec, pamixer -d 2
-      bind=,XF86AudioMute,exec, pamixer -t
-      bind=,XF86AudioMicMute,exec, pamixer --default-source -t
-      bind=,XF86MonBrightnessUp,exec, light -A 2
-      bind=,XF86MonBrightnessDown, exec, light -U 2
+      #----------------------------#
+      # control volume, brightness #
+      #----------------------------#
+      bindi = , XF86AudioRaiseVolume, exec, pamixer -i 2
+      bindi = , XF86AudioLowerVolume, exec, pamixer -d 2
+      bind = , XF86AudioMute, exec, pamixer -t
+      bindi = , XF86MonBrightnessUp, exec, light -A 2
+      bindi = , XF86MonBrightnessDown, exec, light -U 2
 
+      #-------------------#
+      # switch workspaces #
+      #-------------------#
       bind = $mainMod, 1, workspace, 1
       bind = $mainMod, 2, workspace, 2
       bind = $mainMod, 3, workspace, 3
@@ -137,7 +122,12 @@ in
       bind = $mainMod, 8, workspace, 8
       bind = $mainMod, 9, workspace, 9
       bind = $mainMod, 0, workspace, 10
+      bind = $mainMod, mouse_down, workspace, e+1
+      bind = $mainMod, mouse_up, workspace, e-1
 
+      #-----------------------------------#
+      # move active window to a workspace #
+      #-----------------------------------#
       bind = $mainMod SHIFT, 1, movetoworkspace, 1
       bind = $mainMod SHIFT, 2, movetoworkspace, 2
       bind = $mainMod SHIFT, 3, movetoworkspace, 3
@@ -149,9 +139,15 @@ in
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
-      bind = $mainMod, mouse_down, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
+      #------------#
+      # auto start #
+      #------------#
+      exec-once = hyprpaper & mako
+      exec = ${scripts.launch_waybar}/bin/launch_waybar
 
+      #---------------#
+      # resize window #
+      #---------------#
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
     '';

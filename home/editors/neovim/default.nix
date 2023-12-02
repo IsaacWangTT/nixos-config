@@ -26,12 +26,6 @@
     gcc
     gdb
 
-    # css
-    nodePackages_latest.vscode-css-languageserver-bin
-
-    # html
-    nodePackages_latest.vscode-html-languageserver-bin
-
     # markdown
     marksman
     nodePackages_latest.markdownlint-cli
@@ -49,9 +43,12 @@
     lua-language-server
     stylua
 
+    # html css javascript
     prettierd
+    vscode-langservers-extracted
 
     # Optional Requirements
     ripgrep
+    tree-sitter
   ];
 }

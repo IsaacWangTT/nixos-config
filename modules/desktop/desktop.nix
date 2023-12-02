@@ -70,7 +70,7 @@
     variables.NIXOS_OZONE_WL = "1";
   };
 
-  programs.light.enable = true; # light control
+  programs.light.enable = true; # brightness control
 
   programs.thunar = {
     enable = true; # file manager

@@ -1,29 +1,26 @@
 {
   programs.wlogout.style = ''
-    window {
+    * {
       font-family: "JetBrainsMono Nerd Font";
       font-size: 15px;
-      color: #cdd6f4;
-      background-color: rgba(30, 30, 46, 0.5);
+      font-weight: bold;
+    }
+
+    window {
+      background-color: #1e1e2e;
     }
 
     button {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 25%;
-      border: none;
-      background-color: rgba(30, 30, 46, 0);
-      margin: 5px;
-      transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      background-size: 20%;
+      border: 2px solid #6c7086;
+      border-radius: 3rem;
+      background-color: #313244;
+      margin: 10px;
     }
 
-    button:hover {
-      background-color: rgba(49, 50, 68, 0.1);
-    }
-
+    button:hover,
     button:focus {
-      background-color: #cba6f7;
-      color: #1e1e2e;
+      background-color: #89b4fa;
     }
 
     #lock {
