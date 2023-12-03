@@ -2,7 +2,7 @@
 
 {
   home.file.".config/btop/themes".source = "${inputs.catppuccin-btop}/themes";
-  
+
   programs.btop = {
     enable = true;
     settings = {

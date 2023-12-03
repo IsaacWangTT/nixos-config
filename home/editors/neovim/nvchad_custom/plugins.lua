@@ -8,6 +8,7 @@ local plugins = {
 				"fish",
 				"html",
 				"python",
+				"make",
 				"markdown",
 				"nix",
 			},

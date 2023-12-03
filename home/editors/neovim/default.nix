@@ -21,10 +21,8 @@
     shfmt
 
     # c/c++
-    cmake
+    cmake-format
     cmake-language-server
-    gcc
-    gdb
 
     # markdown
     marksman

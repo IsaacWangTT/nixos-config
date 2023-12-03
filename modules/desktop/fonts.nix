@@ -31,12 +31,12 @@
         ];
         sansSerif = [
           "Noto Sans CJK SC"
-	        "Source Han Sans SC"
+          "Source Han Sans SC"
           "FiraCode Nerd Font"
         ];
         serif = [
           "Noto Serif CJK SC"
-	        "Source Han Serif SC"
+          "Source Han Serif SC"
         ];
       };
     };

@@ -5,6 +5,7 @@ local lint = null_ls.builtins.diagnostics
 
 local sources = {
 	formatting.black,
+	formatting.cmake_format,
 	formatting.fish_indent,
 	formatting.prettierd,
 	formatting.shfmt,
@@ -13,6 +14,7 @@ local sources = {
 	formatting.nixpkgs_fmt,
 	formatting.prettierd,
 
+	lint.cmake_lint,
 	lint.deadnix,
 	lint.fish,
 	lint.markdownlint,
