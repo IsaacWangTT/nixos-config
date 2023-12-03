@@ -65,7 +65,6 @@
       grim
       slurp
       linux-wifi-hotspot
-
     ];
     variables.NIXOS_OZONE_WL = "1";
   };

@@ -6,12 +6,8 @@
     cmatrix
     cbonsai
     lolcat
-    ranger
     sl
 
     telegram-desktop
-
-    # ranger plugins need
-    highlight
   ];
 }

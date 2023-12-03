@@ -50,7 +50,6 @@
 
       # Unzip Tools
       p7zip
-      atool
       unzip
       zip
       rar

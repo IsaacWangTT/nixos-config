@@ -106,6 +106,23 @@
       bindi = , XF86MonBrightnessUp, exec, light -A 2
       bindi = , XF86MonBrightnessDown, exec, light -U 2
 
+      #-----------#
+      # wallpaper #
+      #-----------#
+      $w1 = hyprctl hyprpaper wallpaper "eDP-1, ~/Pictures/Wallpapers/1.jpg"
+      $w2 = hyprctl hyprpaper wallpaper "eDP-1, ~/Pictures/Wallpapers/2.jpg"
+      $w3 = hyprctl hyprpaper wallpaper "eDP-1, ~/Pictures/Wallpapers/3.jpg"
+      $w4 = hyprctl hyprpaper wallpaper "eDP-1, ~/Pictures/Wallpapers/4.jpg"
+
+
+      #------------------#
+      # change wallpaper #
+      #------------------#
+      bind = $mainMod, 1, exec, $w1
+      bind = $mainMod, 2, exec, $w2
+      bind = $mainMod, 3, exec, $w3
+      bind = $mainMod, 4, exec, $w4
+
       #-------------------#
       # switch workspaces #
       #-------------------#
