@@ -100,6 +100,8 @@
 
       #tray menu {
         background-color: @surface2;
+        border-radius: 1rem;
+        border: 2px solid @overlay2;
       }
 
       #tray menu > * {

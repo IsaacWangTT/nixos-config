@@ -3,7 +3,6 @@
   nix = {
     settings = {
       auto-optimise-store = true; # Optimise syslinks
-      builders-use-substitutes = true;
       keep-derivations = true;
       keep-outputs = true;
       substituters = [

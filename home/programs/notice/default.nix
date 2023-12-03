@@ -6,8 +6,8 @@
     height = 500;
     margin = "10";
     padding = "5";
-    borderSize = 3;
-    borderRadius = 3;
+    borderSize = 2;
+    borderRadius = 10;
     backgroundColor = "#1e1e2e";
     textColor = "#cdd6f4";
     borderColor = "#89b4fa";
@@ -16,7 +16,7 @@
     extraConfig = ''
       text-alignment=center
       [urgency=high]
-      border-color=#B45C65
+      border-color=#f38ba8
     '';
   };
 }

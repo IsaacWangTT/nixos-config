@@ -6,6 +6,7 @@
     ./hyprpaper.nix
     ./scripts/launch_waybar.nix
     ./scripts/myswaylock.nix
+    ./scripts/sleep.nix
   ];
 
   home.file = {

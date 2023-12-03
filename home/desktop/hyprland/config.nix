@@ -1,4 +1,4 @@
-{ launch_waybar, ... }:
+{ launch_waybar, sleep, caffeine, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -140,7 +140,9 @@
       # auto start #
       #------------#
       exec-once = hyprpaper & mako
+      exec-once = ${sleep}/bin/sleep
       exec = ${launch_waybar}/bin/launch_waybar
+      bind = $mainMod, C, exec, ${caffeine}/bin/caffeine
 
       #---------------#
       # resize window #

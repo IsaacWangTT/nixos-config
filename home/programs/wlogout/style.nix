@@ -16,6 +16,7 @@
       border-radius: 3rem;
       background-color: #313244;
       margin: 10px;
+      color: #cdd6f4;
     }
 
     button:hover,
