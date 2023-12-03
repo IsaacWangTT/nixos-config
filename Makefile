@@ -1,8 +1,11 @@
 deploy:
-	sudo nixos-rebuild --flake .#mikasa
+	sudo nixos-rebuild switch --flake .#mikasa
+
+test:
+	sudo nixos-rebuild test --flake .#mikasa
 
 debug:
-	sudo nixos-rebuild --flake .#mikasa --show-trace --verbose
+	sudo nixos-rebuild test --flake .#mikasa --show-trace --verbose
 
 update:
 	nix flake update

@@ -41,6 +41,7 @@
       zig
       gdb
       glib
+      gnumake
 
       # System Tools
       git
