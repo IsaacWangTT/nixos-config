@@ -18,6 +18,7 @@
           inherit (config.flake-root) projectRootFile;
           programs.nixpkgs-fmt.enable = true;
           programs.beautysh.enable = true;
+          programs.stylua.enable = true;
         };
 
         formatter = config.treefmt.build.wrapper;
