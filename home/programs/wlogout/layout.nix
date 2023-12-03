@@ -1,8 +1,10 @@
+{ myswaylock, ... }:
+
 {
   programs.wlogout.layout = [
     {
       "label" = "lock";
-      "action" = "~/.config/hypr/scripts/lock.sh";
+      "action" = "${myswaylock}/bin/myswaylock";
       "text" = "Lock";
       "keybind" = "l";
     }

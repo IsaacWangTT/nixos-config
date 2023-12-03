@@ -13,6 +13,7 @@ local sources = {
 	formatting.nixpkgs_fmt,
 	formatting.prettierd,
 
+	lint.deadnix,
 	lint.fish,
 	lint.markdownlint,
 	lint.pylint,

@@ -36,6 +36,7 @@
     python311Packages.python-lsp-server
 
     # nix
+    deadnix
     nixpkgs-fmt
     rnix-lsp
 

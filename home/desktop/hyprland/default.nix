@@ -4,6 +4,8 @@
   imports = [
     ./config.nix
     ./hyprpaper.nix
+    ./scripts/launch_waybar.nix
+    ./scripts/myswaylock.nix
   ];
 
   home.file = {
@@ -18,7 +20,7 @@
   home.packages = with pkgs; [
     pamixer
     hyprpaper
-    swaylock-effects
+    swaylock
     swayidle
   ];
 

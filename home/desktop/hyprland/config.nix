@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ launch_waybar, ... }:
 
-let
-  scripts = import ./scripts/launch_waybar.nix { inherit pkgs; };
-in
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
@@ -143,7 +140,7 @@ in
       # auto start #
       #------------#
       exec-once = hyprpaper & mako
-      exec = ${scripts.launch_waybar}/bin/launch_waybar
+      exec = ${launch_waybar}/bin/launch_waybar
 
       #---------------#
       # resize window #
