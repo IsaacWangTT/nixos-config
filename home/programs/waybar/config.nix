@@ -10,7 +10,8 @@
       ];
 
       modules-center = [
-        "hyprland/window"
+        "mpris"
+        "cava"
       ];
 
       modules-right = [
@@ -40,12 +41,34 @@
         };
       };
 
-      "hyprland/window" = {
-        "rewrite" = {
-          "(.*) — Mozilla Firefox" = " $1";
-          "(.*) - fish" = "> [$1]";
-          "(.*) - sudo" = "$ [$1]";
+      "mpris" = {
+        "format" = "{player_icon} {dynamic}";
+        "format-paused" = "{status_icon} {dynamic}";
+        "interval" = 1;
+        "player-icons" = {
+          "default" = "";
         };
+        "status-icons" = {
+          "paused" = "";
+        };
+        "tooltip" = false;
+        "ignored-players" = [ "firefox" ];
+      };
+
+
+      "cava" = {
+        "cava_config" = "/home/isaac/.config/cava/config";
+        "framerate" = 60;
+        "bars" = 20;
+        "lower_cutoff_freq" = 50;
+        "higher_cutoff_freq" = 10000;
+        "sleep_timer" = 5;
+        "hide_on_silence" = true;
+        "bar_delimiter" = 0;
+        "method" = "pipewire";
+        "monstercat" = true;
+        "noise_reduction" = 0.77;
+        "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
       };
 
       "wireplumber" = {

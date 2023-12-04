@@ -43,7 +43,8 @@
       }
 
       #custom-icon,
-      #window,
+      #cava,
+      #mpris,
       #wireplumber,
       #backlight,
       #network,
@@ -62,8 +63,16 @@
         padding-right: 15px;
       }
 
-      #window {
-        color: @peach;
+      #cava {
+        color: @blue;
+      }
+
+      #mpris {
+        color: @green;
+      }
+
+      #mpris.paused {
+        color: @red;
       }
 
       #wireplumber {

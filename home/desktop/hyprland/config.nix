@@ -76,6 +76,8 @@
       bind = $mainMod, E, exec, thunar
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, L, exec, wlogout --protocol layer-shell
+      bind = $mainMod, C, exec, ${caffeine}/bin/caffeine
+      bind = $mainMod CTRL, W, exec, ${launch_waybar}/bin/launch_waybar
 
       #--------#
       # motion #
@@ -158,8 +160,7 @@
       #------------#
       exec-once = hyprpaper & mako
       exec-once = ${sleep}/bin/sleep
-      exec = ${launch_waybar}/bin/launch_waybar
-      bind = $mainMod, C, exec, ${caffeine}/bin/caffeine
+      exec-once = ${launch_waybar}/bin/launch_waybar
 
       #---------------#
       # resize window #

@@ -44,6 +44,10 @@
     };
     lanzaboote.url = "github:nix-community/lanzaboote"; # Secure Boot
     nixGL.url = "github:nix-community/nixGL"; # OpenGL
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database"; # Nix-Index-Database
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     treefmt-nix.url = "github:numtide/treefmt-nix"; # Format
 
     # Desktop Environment
