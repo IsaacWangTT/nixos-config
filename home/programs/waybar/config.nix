@@ -6,8 +6,8 @@
 
       modules-left = [
         "custom/icon"
-        "hyprland/workspaces"
         "cava"
+        "hyprland/workspaces"
       ];
 
       modules-center = [
@@ -28,19 +28,6 @@
         "tooltip" = false;
       };
 
-      "hyprland/workspaces" = {
-        "format" = "{icon}";
-        "format-icons" = {
-          "default" = "";
-        };
-        "persistent-workspaces" = {
-          "1" = [ ];
-          "2" = [ ];
-          "3" = [ ];
-          "4" = [ ];
-        };
-      };
-
       "cava" = {
         "cava_config" = "/home/isaac/.config/cava/config";
         "framerate" = 60;
@@ -55,6 +42,18 @@
         "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
       };
 
+      "hyprland/workspaces" = {
+        "format" = "{icon}";
+        "format-icons" = {
+          "default" = "";
+        };
+        "persistent-workspaces" = {
+          "1" = [ ];
+          "2" = [ ];
+          "3" = [ ];
+          "4" = [ ];
+        };
+      };
 
       "mpris" = {
         "format" = "{player_icon} {dynamic}";

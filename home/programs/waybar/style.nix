@@ -19,11 +19,30 @@
         background-color: transparent;
       }
 
-      #workspaces {
-        border: 2px solid @overlay2;
-        border-radius: 2rem;
+      #custom-icon,
+      #cava,
+      #workspaces,
+      #mpris,
+      #wireplumber,
+      #backlight,
+      #network,
+      #battery,
+      #clock,
+      #tray {
         background-color: @surface2;
-        margin: 7px 3px 0 7px;
+        margin: 5px 0 0 5px;
+        padding: 5px 10px;
+        border-radius: 1rem;
+        border: 2px solid @overlay2;
+      }
+
+      #custom-icon {
+        color: @text;
+        padding-right: 15px;
+      }
+
+      #cava {
+        color: @blue;
       }
 
       #workspaces button {
@@ -40,31 +59,6 @@
 
       #workspaces button:hover {
         color: @rosewater;
-      }
-
-      #custom-icon,
-      #cava,
-      #mpris,
-      #wireplumber,
-      #backlight,
-      #network,
-      #battery,
-      #clock,
-      #tray {
-        background-color: @surface2;
-        margin: 7px 3px 0px 7px;
-        padding: 10px 10px;
-        border-radius: 1rem;
-        border: 2px solid @overlay2;
-      }
-
-      #custom-icon {
-        color: @text;
-        padding-right: 15px;
-      }
-
-      #cava {
-        color: @blue;
       }
 
       #mpris {
@@ -105,6 +99,7 @@
 
       #tray {
         padding: 0 7px;
+        margin-right: 5px;
       }
 
       #tray menu {
