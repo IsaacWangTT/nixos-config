@@ -12,6 +12,13 @@
         fsType = "fuse.bindfs";
         options = [ "ro" "resolve-symlinks" "x-gvfs-hide" ];
       };
+      aggregatedIcons = pkgs.buildEnv {
+        name = "system-icons";
+        paths = with pkgs; [
+          catppuccin-cursors.mochaBlue
+        ];
+        pathsToLink = [ "/share/icons" ];
+      };
       aggregatedFonts = pkgs.buildEnv {
         name = "system-fonts";
         paths = config.fonts.packages;
@@ -19,7 +26,7 @@
       };
     in
     {
-      "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
-      "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
+      "/usr/share/icons" = mkRoSymBind "${aggregatedIcons}/share/icons";
+      "/usr/local/share/fonts" = mkRoSymBind "${aggregatedFonts}/share/fonts";
     };
 }
