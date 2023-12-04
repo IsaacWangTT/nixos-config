@@ -20,8 +20,8 @@
       }
 
       #custom-icon,
-      #cava,
       #workspaces,
+      #cava,
       #mpris,
       #wireplumber,
       #backlight,
@@ -42,14 +42,10 @@
         margin-left: 7px;
       }
 
-      #cava {
-        color: @blue;
-      }
-
       #workspaces button {
         border-radius: 2rem;
         color: @mauve;
-        margin: 5px 2px;
+        margin: 5px 0;
         padding: 0 12px;
         padding-right: 18px;
       }
@@ -60,6 +56,10 @@
 
       #workspaces button:hover {
         color: @rosewater;
+      }
+
+      #cava {
+        color: @blue;
       }
 
       #mpris {
