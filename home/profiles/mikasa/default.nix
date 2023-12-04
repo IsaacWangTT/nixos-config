@@ -1,3 +1,5 @@
+{ vars, ... }:
+
 {
   imports = [
     ../../shell
@@ -6,6 +8,12 @@
     ../../programs
     ../../terminals
   ];
+
+  home.sessionVariables = {
+    BROWSER = "${vars.browser}";
+    TERMINAL = "${vars.terminal}";
+    EDITOR = "${vars.editor}";
+  };
 
   xsession.numlock.enable = true;
 

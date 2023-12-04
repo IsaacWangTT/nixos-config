@@ -5,6 +5,7 @@ let
     user = "isaac";
     fullName = "Isaac Wang";
     email = "isaacwangtt@gmail.com";
+    browser = "firefox";
     terminal = "kitty";
     editor = "nvim";
   };
