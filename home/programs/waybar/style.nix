@@ -46,8 +46,7 @@
         border-radius: 2rem;
         color: @mauve;
         margin: 5px 0;
-        padding: 0 12px;
-        padding-right: 18px;
+        padding: 0 16px 0 12px;
       }
 
       #workspaces button.active {
