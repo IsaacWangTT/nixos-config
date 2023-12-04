@@ -57,14 +57,16 @@
       alsa-lib
       alsa-utils
       flac
-      pulsemixer
+
+      # Linux Tools
       linux-firmware
-      sshpass
+      linux-wifi-hotspot
+
+      # Others
       lxappearance
       imagemagick
       grim
       slurp
-      linux-wifi-hotspot
     ];
     variables.NIXOS_OZONE_WL = "1";
   };
