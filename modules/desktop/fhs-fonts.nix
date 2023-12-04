@@ -15,7 +15,7 @@
       aggregatedIcons = pkgs.buildEnv {
         name = "system-icons";
         paths = with pkgs; [
-          catppuccin-cursors.mochaBlue
+          papirus-icon-theme
         ];
         pathsToLink = [ "/share/icons" ];
       };
