@@ -26,12 +26,14 @@
       };
       timeout = 10;
     };
+    resumeDevice = "/swap/swapfile";
   };
 
   boot = {
     kernelParams = [
       "quiet"
       "splash"
+      "resume_offset=7611648"
       "nvidia-drm.modest=1"
     ];
     supportedFilesystems = [
@@ -45,11 +47,11 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   };
 
-  # boot.plymouth = {
-  #   enable = true;
-  #   themePackages = [ (pkgs.catppuccin-plymouth.override { variant = "mocha"; }) ];
-  #   theme = "catppuccin-mocha";
-  # };
+  boot.plymouth = {
+    enable = true;
+    themePackages = [ (pkgs.catppuccin-plymouth.override { variant = "mocha"; }) ];
+    theme = "catppuccin-mocha";
+  };
 
   hardware.tuxedo-rs = {
     enable = true;

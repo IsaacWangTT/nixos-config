@@ -34,6 +34,13 @@
       options = [ "subvol=@home" ];
     };
 
+  fileSystems."/swap" =
+    {
+      device = "/dev/disk/by-label/myLinux";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" ];
+    };
+
   fileSystems."/media/windows/c" =
     {
       device = "/dev/disk/by-label/myWindows";
@@ -52,8 +59,17 @@
       fsType = "ntfs-3g";
     };
 
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8192;
+      priority = 30;
+    }
+  ];
+
   zramSwap = {
     enable = true;
+    priority = 60;
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
