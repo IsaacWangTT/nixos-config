@@ -30,7 +30,7 @@
       #clock,
       #tray {
         background-color: @surface2;
-        margin: 5px 0 0 5px;
+        margin: 7px 0 0 5px;
         padding: 5px 10px;
         border-radius: 1rem;
         border: 2px solid @overlay2;
@@ -39,6 +39,7 @@
       #custom-icon {
         color: @text;
         padding-right: 15px;
+        margin-left: 7px;
       }
 
       #cava {
@@ -99,7 +100,7 @@
 
       #tray {
         padding: 0 7px;
-        margin-right: 5px;
+        margin-right: 7px;
       }
 
       #tray menu {
