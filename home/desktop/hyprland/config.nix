@@ -137,8 +137,8 @@ in
       bindi = , XF86MonBrightnessDown, exec, light -U 2
       bind = , XF86TouchpadToggle, exec, ${touchpadOnOff}/bin/touchpadOnOff
       bind = , XF86KbdLightOnOff, exec, ${backlightOnOff}/bin/backlightOnOff
-      bindi = , XF86KbdBrightnessUp, exec, light -s sysfs/leds/rgb:kbd_backlight -A 5
-      bindi = , XF86KbdBrightnessDown, exec, light -s sysfs/leds/rgb:kbd_backlight -U 5
+      bindi = , XF86KbdBrightnessUp, exec, light -s sysfs/leds/rgb:kbd_backlight -A 20
+      bindi = , XF86KbdBrightnessDown, exec, light -s sysfs/leds/rgb:kbd_backlight -U 20
 
       #-----------#
       # wallpaper #
