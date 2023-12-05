@@ -7,6 +7,8 @@ local plugins = {
 				"css",
 				"fish",
 				"html",
+				"json",
+				"jsonc",
 				"python",
 				"make",
 				"markdown",
