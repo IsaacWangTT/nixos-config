@@ -8,15 +8,22 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      n
       set -g fish_greeting ""
       set -g pure_symbol_prompt " ❯"
       set -g pure_symbol_ssh_prefix " "
     '';
     shellAliases = {
       l = "ls -ahl";
+      la = "exa -a --icons";
+      ll = "exa -l --icons";
+      ls = "exa";
       n = "neofetch";
       top = "btop";
+    };
+    functions = {
+      f = ''
+        FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git' FZF_DEFAULT_OPTS="--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8" fzf
+      '';
     };
     plugins = [
       {
