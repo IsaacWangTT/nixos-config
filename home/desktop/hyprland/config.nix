@@ -1,5 +1,33 @@
-{ launch_waybar, sleep, caffeine, ... }:
+{ pkgs, launch_waybar, sleep, caffeine, ... }:
 
+let
+  backlightOnOff = pkgs.writeShellScriptBin "backlightOnOff" ''
+    if [ $(light -s sysfs/leds/rgb:kbd_backlight -G) != 0.00 ]; then
+      light -s sysfs/leds/rgb:kbd_backlight -O
+      sleep 0.1 &
+      light -s sysfs/leds/rgb:kbd_backlight -S 0.00 &
+    else
+      light -s sysfs/leds/rgb:kbd_backlight -I
+    fi
+  '';
+  touchpadOnOff = pkgs.writeShellScriptBin "touchpadOnOff" ''
+    HYPRLAND_DEVICE="syn1221:00-06cb:cd65-touchpad"
+    HYPRLAND_VARIABLE="device:$HYPRLAND_DEVICE:enabled"
+
+    if [ -z "$XDG_RUNTIME_DIR" ]; then
+      export XDG_RUNTIME_DIR=/run/user/$(id -u)
+    fi
+
+    # Check if device is currently enabled (1 = enabled, 0 = disabled)
+    DEVICE="$(hyprctl getoption $HYPRLAND_VARIABLE | grep 'int: 1')"
+
+    if [ -z "$DEVICE" ]; then
+      hyprctl keyword $HYPRLAND_VARIABLE true
+    else
+      hyprctl keyword $HYPRLAND_VARIABLE false
+    fi
+  '';
+in
 {
   wayland.windowManager.hyprland = {
     extraConfig = ''
@@ -107,6 +135,10 @@
       bind = , XF86AudioMute, exec, pamixer -t
       bindi = , XF86MonBrightnessUp, exec, light -A 2
       bindi = , XF86MonBrightnessDown, exec, light -U 2
+      bind = , XF86TouchpadToggle, exec, ${touchpadOnOff}/bin/touchpadOnOff
+      bind = , XF86KbdLightOnOff, exec, ${backlightOnOff}/bin/backlightOnOff
+      bindi = , XF86KbdBrightnessUp, exec, light -s sysfs/leds/rgb:kbd_backlight -A 5
+      bindi = , XF86KbdBrightnessDown, exec, light -s sysfs/leds/rgb:kbd_backlight -U 5
 
       #-----------#
       # wallpaper #
