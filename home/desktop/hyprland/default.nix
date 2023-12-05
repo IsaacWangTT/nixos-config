@@ -22,6 +22,7 @@
     playerctl
     pamixer
     hyprpaper
+    hyprpicker
     swaylock
     swayidle
   ];

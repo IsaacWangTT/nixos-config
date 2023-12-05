@@ -1,24 +1,50 @@
 {
-  neofetch = ''
-    print_info()
+  fastfetch = ''
     {
-      info "$(color 7)  " distro
-      info "$(color 3)  " kernel
-      info "$(color 2)  " packages
-      info "$(color 9)  " shell
-      info "$(color 10)  " de
-      info "$(color 1)  " term
-      info "$(color 11) 󰍛 " memory
-      # info cols
+      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+      "logo": {
+        "source": "nixos_small"
+      },
+      "display": {
+        "separator": " • "
+      },
+      "modules": [
+        {
+          "type": "os",
+          "key": " ",
+          "keyColor": "bright_white"
+        },
+        {
+          "type": "kernel",
+          "key": " ",
+          "keyColor": "bright_yellow"
+        },
+        {
+          "type": "packages",
+          "key": " ",
+          "keyColor": "bright_green"
+        },
+        {
+          "type": "shell",
+          "key": " ",
+          "keyColor": "red"
+        },
+        {
+          "type": "wm",
+          "key": " ",
+          "keyColor": "green"
+        },
+        {
+          "type": "terminal",
+          "key": " ",
+          "keyColor": "bright_red"
+        },
+        {
+          "type": "memory",
+          "key": "󰍛 ",
+          "keyColor": "yellow"
+        }
+      ]
     }
-    os_arch="off"
-    uptime_shorthand="tiny"
-    shell_version="off"
-    cpu_speed="off"
-    cpu_cores="off"
-    gtk_shorthand="on"
-    separator=" •"
-    ascii_distro="nixos_small"
-    ascii_colors=(4 6 7 12 14 15)
   '';
 }

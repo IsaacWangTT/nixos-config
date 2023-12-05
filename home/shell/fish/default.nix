@@ -17,7 +17,7 @@
       la = "exa -a --icons";
       ll = "exa -l --icons";
       ls = "exa";
-      n = "neofetch";
+      n = "fastfetch";
       top = "btop";
     };
     functions = {
