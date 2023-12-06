@@ -12,7 +12,6 @@ in
         inherit module_args;
 
         nixosModules = [
-
           inputs.home-manager.nixosModules.default
           {
             home-manager = {
@@ -22,6 +21,7 @@ in
           }
           inputs.daeuniverse.nixosModules.daed
           inputs.lanzaboote.nixosModules.lanzaboote
+
           module_args
           ./base
         ];

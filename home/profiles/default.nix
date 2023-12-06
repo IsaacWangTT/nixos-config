@@ -13,6 +13,7 @@ let
   homeModules = [
     (import ../. { inherit vars; })
     module_args
+
     inputs.chaotic.homeManagerModules.default
     inputs.flatpaks.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default

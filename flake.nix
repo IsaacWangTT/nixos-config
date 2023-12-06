@@ -12,7 +12,10 @@
         inputs.treefmt-nix.flakeModule
       ];
       perSystem = { config, pkgs, system, ... }: {
-        _module.args.pkgs = import inputs.nixpkgs { inherit system; };
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [ inputs.nixgl.overlay ];
+        };
 
         treefmt.config = {
           inherit (config.flake-root) projectRootFile;

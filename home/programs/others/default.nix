@@ -16,5 +16,8 @@
 
     # Software
     telegram-desktop
+
+    # Development
+    scrcpy
   ];
 }
