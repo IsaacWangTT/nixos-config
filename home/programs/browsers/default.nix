@@ -19,6 +19,7 @@
       "default" = {
         extensions = with config.nur.repos.rycee.firefox-addons; [
           bitwarden
+          grammarly
           tab-session-manager
           tampermonkey
           translate-web-pages
