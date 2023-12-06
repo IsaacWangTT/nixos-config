@@ -20,7 +20,7 @@
       # Development
       "flathub:app/com.jetbrains.CLion/x86_64/stable"
       "flathub:app/com.jetbrains.DataGrip/x86_64/stable"
-      "flathub:app/com.jetbrains.IntelliJ-IDEA-Ultimate/x86_64/stable/"
+      "flathub:app/com.jetbrains.IntelliJ-IDEA-Ultimate/x86_64/stable"
       "flathub:app/com.jetbrains.PyCharm-Professional/x86_64/stable"
     ];
     remotes = {
