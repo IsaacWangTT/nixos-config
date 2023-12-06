@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.chromium = {
@@ -12,5 +12,21 @@
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
+    policies = {
+      DefaultDownloadDirectory = "\${home}/Downloads/Firefox";
+    };
+    profiles = {
+      "default" = {
+        extensions = with config.nur.repos.rycee.firefox-addons; [
+          bitwarden
+          tab-session-manager
+          tampermonkey
+          translate-web-pages
+        ];
+        settings = {
+          "general.autoScroll" = true;
+        };
+      };
+    };
   };
 }
