@@ -15,6 +15,7 @@
     xfce.catfish
 
     # Software
+    libreoffice-fresh
     telegram-desktop
 
     # Development

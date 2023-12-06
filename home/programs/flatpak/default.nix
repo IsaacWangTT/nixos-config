@@ -22,6 +22,9 @@
       "flathub:app/com.jetbrains.DataGrip/x86_64/stable"
       "flathub:app/com.jetbrains.IntelliJ-IDEA-Ultimate/x86_64/stable"
       "flathub:app/com.jetbrains.PyCharm-Professional/x86_64/stable"
+
+      # Others
+      "flathub:app/md.obsidian.Obsidian/x86_64/stable"
     ];
     remotes = {
       "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
