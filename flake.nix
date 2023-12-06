@@ -57,6 +57,9 @@
     hyprland.url = "github:hyprwm/Hyprland"; # Hyprland
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland"; # Wayland Packages
 
+    # Others
+    spicetify-nix.url = "github:the-argus/spicetify-nix"; # spicetify
+
     #####  Some non-flake repositories  #####
     # NvChad
     nvchad = {

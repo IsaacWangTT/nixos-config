@@ -14,7 +14,6 @@
       "flathub:app/com.qq.QQ/x86_64/stable"
 
       # Music
-      "flathub:app/com.spotify.Client/x86_64/stable"
       "flathub:app/com.mastermindzh.tidal-hifi/x86_64/stable"
 
       # Development

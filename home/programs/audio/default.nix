@@ -1,5 +1,6 @@
 {
-  services.easyeffects = {
-    enable = true;
-  };
+  imports = [
+    ./easyeffects.nix
+    ./spotify.nix
+  ];
 }
