@@ -14,7 +14,10 @@
       perSystem = { config, pkgs, system, ... }: {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
-          overlays = [ inputs.nixGL.overlay ];
+          overlays = [
+            inputs.nixGL.overlay
+            inputs.nixpkgs-wayland.overlay
+          ];
         };
 
         treefmt.config = {

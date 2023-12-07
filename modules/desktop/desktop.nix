@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixosFlakePkgs, ... }:
 
 {
   programs = {
@@ -20,8 +20,13 @@
   security.pam.services.swaylock = { }; # fix swaylock password
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ] ++
+    (with nixosFlakePkgs.nixpkgs-wayland; [
+      xdg-desktop-portal-wlr
+    ]);
     config.common.default = "gtk";
   };
 
@@ -32,7 +37,6 @@
       polkit_gnome
 
       # Wayland
-      wlr-randr
       wayland
       wayland-scanner
       wayland-utils
@@ -48,11 +52,6 @@
       xorg.xeyes
       xorg.xhost
 
-      # Wayland Tools
-      wl-clipboard
-      wev
-      wf-recorder
-
       # Sound
       alsa-lib
       alsa-utils
@@ -65,9 +64,16 @@
       # Others
       lxappearance
       imagemagick
-      grim
-      slurp
-    ];
+    ] ++
+    (with nixosFlakePkgs.nixpkgs-wayland; [
+      # Wayland
+      wlr-randr
+
+      # Wayland Tools
+      wl-clipboard
+      wev
+      wf-recorder
+    ]);
     variables.NIXOS_OZONE_WL = "1";
   };
 

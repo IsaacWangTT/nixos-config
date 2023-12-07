@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, homeFlakePkgs, ... }:
 
 {
   imports = [
@@ -23,9 +23,13 @@
     pamixer
     hyprpaper
     hyprpicker
-    swaylock
+  ] ++
+  (with homeFlakePkgs.nixpkgs-wayland;[
+    swaylock-effects
     swayidle
-  ];
+    slurp
+    grim
+  ]);
 
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 

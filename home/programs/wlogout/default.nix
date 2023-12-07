@@ -1,3 +1,5 @@
+{ homeFlakePkgs, ... }:
+
 {
   imports = [
     ./layout.nix
@@ -11,5 +13,6 @@
 
   programs.wlogout = {
     enable = true;
+    package = homeFlakePkgs.nixpkgs-wayland.wlogout;
   };
 }

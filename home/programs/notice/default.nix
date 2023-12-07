@@ -1,6 +1,9 @@
+{ homeFlakePkgs, ... }:
+
 {
   services.mako = {
     enable = true;
+    package = homeFlakePkgs.nixpkgs-wayland.mako;
     font = "Iosevka Nerd Font 12";
     width = 256;
     height = 500;

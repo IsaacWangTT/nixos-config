@@ -1,21 +1,18 @@
-{ inputs, pkgs, ... }:
+{ pkgs, homeFlakePkgs, ... }:
 
-let
-  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
-in
 {
   programs.spicetify = {
     spotifyPackage = pkgs.spotify;
     spicetifyPackage = pkgs.spicetify-cli;
 
     enable = true;
-    theme = spicePkgs.themes.Comfy;
+    theme = homeFlakePkgs.spicetify-nix.themes.Comfy;
     colorScheme = "catppuccin-mocha";
-    enabledCustomApps = with spicePkgs.apps; [
+    enabledCustomApps = with homeFlakePkgs.spicetify-nix.apps; [
       lyrics-plus
       marketplace
     ];
-    enabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with homeFlakePkgs.spicetify-nix.extensions; [
       fullAppDisplay
       autoVolume
       groupSession

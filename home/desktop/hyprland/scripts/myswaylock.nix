@@ -27,7 +27,10 @@
             --text-wrong-color cdd6f4 \
             --text-clear-color cdd6f4 \
             --text-caps-lock-color cdd6f4 \
-            --color 1e1e2e80
+            --color 1e1e2e80 \
+            --screenshots \
+            --clock \
+            --indicator
         '';
       };
     }

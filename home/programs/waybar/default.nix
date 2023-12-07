@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, homeFlakePkgs, ... }:
 
 {
   imports = [
@@ -12,5 +12,6 @@
 
   programs.waybar = {
     enable = true;
+    package = homeFlakePkgs.nixpkgs-wayland.waybar;
   };
 }

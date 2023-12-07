@@ -10,6 +10,13 @@ let
     editor = "nvim";
   };
 
+  system = "x86_64-linux";
+
+  homeFlakePkgs = {
+    nixpkgs-wayland = inputs.nixpkgs-wayland.packages.${system};
+    spicetify-nix = inputs.spicetify-nix.packages.${system}.default;
+  };
+
   homeModules = [
     (import ../. { inherit vars; })
     module_args
@@ -29,7 +36,7 @@ in
 {
   imports = [
     {
-      _module.args = { inherit homeImports vars; };
+      _module.args = { inherit homeImports vars homeFlakePkgs; };
     }
   ];
 }
