@@ -114,7 +114,6 @@
       "https://cache.nixos.org"
       "https://hyprland.cachix.org"
     ];
-
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://nixpkgs-wayland.cachix.org"
