@@ -20,11 +20,13 @@
   security.pam.services.swaylock = { }; # fix swaylock password
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
-    ];
+    ] ++
+    (with nixosFlakePkgs.nixpkgs-wayland; [
+      xdg-desktop-portal-wlr
+    ]);
     config.common.default = "gtk";
   };
 
