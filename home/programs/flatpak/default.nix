@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.flatpak ];
-
   services.flatpak = {
-    enableModule = true;
     packages = [
       # Settings
       "flathub:app/com.github.tchx84.Flatseal/x86_64/stable"
@@ -24,9 +21,10 @@
 
       # Others
       "flathub:app/md.obsidian.Obsidian/x86_64/stable"
+      "flathub:app/net.agalwood.Motrix/x86_64/stable"
     ];
     remotes = {
-      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      "flathub" = "https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo";
     };
   };
 }

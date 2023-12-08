@@ -54,6 +54,7 @@
       url = "github:Mic92/nix-index-database"; # Nix-Index-Database
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix.url = "github:Mic92/sops-nix"; # Manage Secret
     treefmt-nix.url = "github:numtide/treefmt-nix"; # Format
 
     # Desktop Environment
@@ -110,7 +111,7 @@
 
     substituters = [
       "https://isaacwangtt.cachix.org"
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
       "https://hyprland.cachix.org"
     ];

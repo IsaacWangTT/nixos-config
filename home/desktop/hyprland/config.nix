@@ -191,6 +191,7 @@ in
       # auto start #
       #------------#
       exec-once = hyprpaper & mako
+      exec-once = wlsunset -l 22.5 -L 114.0
       exec-once = ${sleep}/bin/sleep
       exec-once = ${launch_waybar}/bin/launch_waybar
 

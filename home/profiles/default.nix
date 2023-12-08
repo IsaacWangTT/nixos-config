@@ -24,9 +24,10 @@ let
     inputs.chaotic.homeManagerModules.default
     inputs.flatpaks.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default
-    inputs.spicetify-nix.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.nur.hmModules.nur
+    inputs.sops-nix.homeManagerModules.sops
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   homeImports = {

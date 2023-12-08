@@ -29,6 +29,7 @@
     swayidle
     slurp
     grim
+    wlsunset
   ]);
 
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
