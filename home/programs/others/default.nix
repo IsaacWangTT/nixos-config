@@ -13,6 +13,7 @@
     clamav
     clamtk
     xfce.catfish
+    via
 
     # Software
     libreoffice-fresh
