@@ -37,7 +37,8 @@
         {
           "type": "terminal",
           "key": " ",
-          "keyColor": "bright_red"
+          "keyColor": "bright_red",
+          "format": "{3}"
         },
         {
           "type": "memory",

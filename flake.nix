@@ -33,6 +33,7 @@
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [ git neovim sbctl ];
+            shellHook = "exec fish";
             inputsFrom = [
               config.flake-root.devShell
             ];
@@ -41,6 +42,7 @@
             name = "secret";
             nativeBuildInputs = [ sops age neovim ssh-to-age ];
             shellHook = ''
+              exec fish
               export $EDITOR=nvim
             '';
             inputsFrom = [
