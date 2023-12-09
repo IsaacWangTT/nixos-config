@@ -23,7 +23,7 @@
         treefmt.config = {
           inherit (config.flake-root) projectRootFile;
           programs = {
-            deadnix.enable.enable = true;
+            deadnix.enable = true;
             nixpkgs-fmt.enable = true;
             stylua.enable = true;
             yamlfmt.enable = true;
