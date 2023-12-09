@@ -1,11 +1,11 @@
 deploy:
-	sudo nixos-rebuild switch --flake .#mikasa
+	nixos-rebuild switch --flake .#mikasa --use-remote-sudo
 
 test:
-	sudo nixos-rebuild test --flake .#mikasa
+	nixos-rebuild test --flake .#mikasa --use-remote-sudo
 
 debug:
-	sudo nixos-rebuild test --flake .#mikasa --show-trace --verbose
+	nixos-rebuild test --flake .#mikasa --use-remote-sudo --show-trace --verbose
 
 update:
 	nix flake update
