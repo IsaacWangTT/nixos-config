@@ -12,6 +12,7 @@
           ./mikasa
           ../modules/desktop
           ../modules/hardware
+          ../modules/proxy
           ../modules/virtualisation
           ../modules/boot/lanzaboote.nix
           {

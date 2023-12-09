@@ -46,6 +46,12 @@
     prettierd
     vscode-langservers-extracted
 
+    # yaml
+    yamlfmt
+    yamllint
+    yaml-language-server
+
+
     # Optional Requirements
     ripgrep
     tree-sitter

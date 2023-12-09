@@ -24,8 +24,8 @@ in
               useUserPackages = true;
             };
           }
-          inputs.daeuniverse.nixosModules.daed
           inputs.lanzaboote.nixosModules.lanzaboote
+          inputs.sops-nix.nixosModules.sops
 
           module_args
           ./base

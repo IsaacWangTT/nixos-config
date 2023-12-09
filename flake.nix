@@ -27,6 +27,25 @@
           programs.stylua.enable = true;
         };
 
+        devShells = {
+          default = pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [ git neovim sbctl ];
+            inputsFrom = [
+              config.flake-root.devShell
+            ];
+          };
+          secret = with pkgs; mkShell {
+            name = "secret";
+            nativeBuildInputs = [ sops age neovim ssh-to-age ];
+            shellHook = ''
+              export $EDITOR=nvim
+            '';
+            inputsFrom = [
+              config.flake-root.devShell
+            ];
+          };
+        };
+
         formatter = config.treefmt.build.wrapper;
       };
     };
@@ -40,7 +59,6 @@
     nur.url = "github:nix-community/NUR"; # NUR
 
     # System Tools
-    daeuniverse.url = "github:daeuniverse/flake.nix"; # Proxy
     flake-parts.url = "github:hercules-ci/flake-parts"; # Nix Flakes Framework
     flake-root.url = "github:srid/flake-root"; # Find Project Root Directory
     flatpaks.url = "github:GermanBread/declarative-flatpak"; # Declarative Flatpak

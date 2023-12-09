@@ -13,6 +13,7 @@ local plugins = {
 				"make",
 				"markdown",
 				"nix",
+				"yaml",
 			},
 		},
 	},

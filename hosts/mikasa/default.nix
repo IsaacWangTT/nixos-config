@@ -58,7 +58,5 @@
     tailor-gui.enable = true;
   };
 
-  services.daed.enable = true;
-
   virtualisation.docker.storageDriver = "btrfs";
 }
