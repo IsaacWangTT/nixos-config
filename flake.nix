@@ -22,9 +22,12 @@
 
         treefmt.config = {
           inherit (config.flake-root) projectRootFile;
-          programs.nixpkgs-fmt.enable = true;
-          programs.beautysh.enable = true;
-          programs.stylua.enable = true;
+          programs = {
+            deadnix.enable.enable = true;
+            nixpkgs-fmt.enable = true;
+            stylua.enable = true;
+            yamlfmt.enable = true;
+          };
         };
 
         devShells = {
