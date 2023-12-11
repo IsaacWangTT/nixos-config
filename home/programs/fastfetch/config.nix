@@ -12,7 +12,8 @@
         {
           "type": "os",
           "key": " ",
-          "keyColor": "bright_white"
+          "keyColor": "bright_white",
+          "format": "{3}"
         },
         {
           "type": "kernel",
