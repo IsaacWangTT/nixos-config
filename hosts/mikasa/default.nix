@@ -58,5 +58,9 @@
     tailor-gui.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    via
+  ];
+
   virtualisation.docker.storageDriver = "btrfs";
 }

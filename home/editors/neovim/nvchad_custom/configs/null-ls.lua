@@ -15,12 +15,12 @@ local sources = {
 	formatting.prettierd,
 	formatting.yamlfmt,
 
-	-- lint.cmake_lint,
-	-- lint.deadnix,
-	-- lint.fish,
-	-- lint.markdownlint,
-	-- lint.pylint,
-	-- lint.yamllint,
+	lint.cmake_lint,
+	lint.deadnix,
+	lint.fish,
+	lint.markdownlint,
+	lint.pylint,
+	lint.yamllint,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

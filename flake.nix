@@ -66,7 +66,6 @@
     # System Tools
     flake-parts.url = "github:hercules-ci/flake-parts"; # Nix Flakes Framework
     flake-root.url = "github:srid/flake-root"; # Find Project Root Directory
-    flatpaks.url = "github:GermanBread/declarative-flatpak"; # Declarative Flatpak
     home-manager = {
       url = "github:nix-community/home-manager"; # Home Manager
       inputs.nixpkgs.follows = "nixpkgs";

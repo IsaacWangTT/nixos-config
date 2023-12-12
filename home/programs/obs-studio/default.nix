@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 
 {
   home.file.".config/obs-studio/themes".source = "${inputs.catppuccin-obs}/themes";

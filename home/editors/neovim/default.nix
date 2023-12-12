@@ -55,6 +55,5 @@
     # Optional Requirements
     ripgrep
     tree-sitter
-    codeium
   ];
 }
