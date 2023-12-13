@@ -35,8 +35,8 @@
 
     # nix
     deadnix
+    nixd
     nixpkgs-fmt
-    rnix-lsp
 
     # lua
     lua-language-server

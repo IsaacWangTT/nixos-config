@@ -3,6 +3,8 @@
   nix = {
     settings = {
       auto-optimise-store = true; # Optimise syslinks
+      auto-allocate-uids = true;
+      use-cgroups = true;
       builders-use-substitutes = true;
       keep-derivations = true;
       keep-outputs = true;
@@ -33,7 +35,7 @@
     package = pkgs.nixVersions.unstable;
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''
-      experimental-features = nix-command flakes
+      experimental-features = nix-command flakes auto-allocate-uids cgroups configurable-impure-env
       keep-outputs          = true
       keep-derivations      = true
     '';

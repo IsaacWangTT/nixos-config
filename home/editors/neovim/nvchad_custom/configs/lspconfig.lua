@@ -11,8 +11,8 @@ local servers = {
 	"html",
 	"jsonls",
 	"marksman",
+	"nixd",
 	"pylsp",
-	"rnix",
 }
 
 for _, lsp in ipairs(servers) do

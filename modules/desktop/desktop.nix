@@ -1,4 +1,4 @@
-{ config, pkgs, nixosFlakePkgs, ... }:
+{ config, pkgs, nixosFlakePkgs, vars, ... }:
 
 {
   programs = {
@@ -109,9 +109,8 @@
       enable = true; # desktop manager
       settings = {
         default_session = {
-          command = ''
-            ${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland
-          '';
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          user = "${vars.user}";
         };
       };
     };
