@@ -101,7 +101,7 @@ in
       #----------#
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, T, exec, kitty
-      bind = $mainMod, E, exec, thunar
+      bind = $mainMod, E, exec, nautilus
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, L, exec, wlogout --protocol layer-shell
       bind = $mainMod, C, exec, ${caffeine}/bin/caffeine
@@ -182,6 +182,7 @@ in
       # auto start #
       #------------#
       exec-once = hyprpaper & mako
+      exec-once = sleep 1 & valent --gapplication-service
       exec-once = wlsunset -l 22.5 -L 114.0
       exec-once = ${sleep}/bin/sleep
       exec-once = ${launch_waybar}/bin/launch_waybar

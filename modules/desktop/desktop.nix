@@ -73,19 +73,25 @@
       wl-clipboard
       wev
       wf-recorder
+    ]) ++
+    (with pkgs.gnome; [
+      nautilus
+      file-roller
+      eog
+      gnome-calculator
+      dconf-editor
     ]);
     variables.NIXOS_OZONE_WL = "1";
   };
 
-  programs.light.enable = true; # brightness control
-
-  programs.thunar = {
-    enable = true; # file manager
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
+  programs = {
+    kdeconnect = {
+      enable = true;
+      package = pkgs.valent;
+    };
   };
+
+  programs.light.enable = true; # brightness control
 
   services = {
     gvfs.enable = true;
