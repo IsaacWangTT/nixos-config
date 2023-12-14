@@ -19,6 +19,7 @@
           tab-session-manager
           tampermonkey
           translate-web-pages
+          tree-style-tab
           ublock-origin
         ];
         search = {
@@ -106,6 +107,12 @@
         };
         userChrome = ''
           @import "firefox-gnome-theme-120/userChrome.css";
+
+          #tabbrowser-tabs tab,
+          #tabbrowser-tabs tab ~ toolbarbutton,
+          #tabbrowser-tabs tab ~ #tabbrowser-arrowscrollbox-periphery {
+            visibility: collapse;
+          }
         '';
         userContent = ''
           @import "firefox-gnome-theme-120/userContent.css";
