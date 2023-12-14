@@ -76,10 +76,6 @@
     ]) ++
     (with pkgs.gnome; [
       nautilus
-      file-roller
-      eog
-      gnome-calculator
-      dconf-editor
     ]);
     variables.NIXOS_OZONE_WL = "1";
   };

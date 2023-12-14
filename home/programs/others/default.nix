@@ -13,6 +13,9 @@
     clamav
     clamtk
     xfce.catfish
+    gnome-solanum
+    baobab
+    snapshot
 
     # Software
     libreoffice-fresh
@@ -20,5 +23,15 @@
 
     # Development
     scrcpy
-  ];
+  ] ++
+  (with pkgs.gnome; [
+    file-roller
+    eog
+    dconf-editor
+
+    gnome-calculator
+    gnome-clocks
+    gnome-system-monitor
+    gnome-weather
+  ]);
 }

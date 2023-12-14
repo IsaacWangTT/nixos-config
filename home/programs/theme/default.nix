@@ -31,6 +31,12 @@
       name = "JetBrainsMono Nerd Font";
       size = 12;
     };
+    gtk4.extraConfig = {
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintslight";
+      gtk-xft-rgba = "rgb";
+    };
     gtk3.extraConfig = {
       gtk-xft-antialias = 1;
       gtk-xft-hinting = 1;
@@ -43,6 +49,11 @@
       gtk-xft-hintstyle="hintslight"
       gtk-xft-rgba="rgb"
     '';
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
   };
 
   dconf.settings = {
