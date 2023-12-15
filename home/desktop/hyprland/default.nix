@@ -15,14 +15,15 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = true;
+    systemd.enable = true;
   };
 
   home.packages = with pkgs; [
+    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+    inputs.hypr-hyprpicker.packages.${pkgs.system}.hyprpicker
+    inputs.hypr-hyprpaper.packages.${pkgs.system}.hyprpaper
     playerctl
     pamixer
-    hyprpaper
-    hyprpicker
   ] ++
   (with homeFlakePkgs.nixpkgs-wayland;[
     swaylock-effects
