@@ -114,9 +114,9 @@
 
       "clock" = {
         "interval" = 1;
-        "format" = " {:%I:%M}";
+        "format" = " {:%I:%M %p}";
         "tooltip" = true;
-        "tooltip-format" = "{:%Y-%m-%d %I:%H:%S}";
+        "tooltip-format" = "{:%F %r}";
       };
 
       "tray" = {
