@@ -64,6 +64,7 @@
       # Others
       lxappearance
       imagemagick
+      ffmpeg
     ] ++
     (with nixosFlakePkgs.nixpkgs-wayland; [
       # Wayland
