@@ -97,7 +97,7 @@
           "browser.urlbar.openintab" = true;
           "privacy.resistFingerprinting.block_mozAddonManager" = true;
           "extensions.webextensions.restrictedDomains" = "";
-          "signon.rememberSignons" = true;
+          "signon.rememberSignons" = false;
 
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "browser.uidensity" = 0;
