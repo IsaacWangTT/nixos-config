@@ -58,6 +58,7 @@
       "mpris" = {
         "format" = "{player_icon} {dynamic}";
         "format-paused" = "{status_icon} {dynamic}";
+        "dynamic-order" = [ "title" "artist" "position" "length" ];
         "interval" = 1;
         "player-icons" = {
           "default" = "";
@@ -66,7 +67,8 @@
           "paused" = "";
         };
         "tooltip" = false;
-        "ignored-players" = [ "firefox" "kdeconnect" ];
+        "ignored-players" = [ "firefox" ];
+        "title-len" = 20;
       };
 
       "wireplumber" = {
