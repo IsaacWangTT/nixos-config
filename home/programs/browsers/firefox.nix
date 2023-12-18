@@ -6,6 +6,7 @@
     package = pkgs.firefox-wayland;
     policies = {
       DefaultDownloadDirectory = "\${home}/Downloads/Firefox";
+      ShowHomeButton = true;
     };
     profiles = {
       "default" = {
@@ -96,6 +97,7 @@
           "browser.urlbar.openintab" = true;
           "privacy.resistFingerprinting.block_mozAddonManager" = true;
           "extensions.webextensions.restrictedDomains" = "";
+          "signon.rememberSignons" = true;
 
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "browser.uidensity" = 0;
