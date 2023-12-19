@@ -28,7 +28,8 @@
         {
           "type": "shell",
           "key": " ",
-          "keyColor": "red"
+          "keyColor": "red",
+          "format": "{3}"
         },
         {
           "type": "wm",

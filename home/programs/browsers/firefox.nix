@@ -21,6 +21,7 @@
           tampermonkey
           translate-web-pages
           tree-style-tab
+          tst-wheel-and-double
           ublock-origin
         ];
         search = {
