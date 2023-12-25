@@ -16,7 +16,7 @@
       };
       timeout = 10;
     };
-    resumeDevice = "/swap/swapfile";
+    resumeDevice = "/dev/disk/by-label/myLinux";
   };
 
   boot = {
