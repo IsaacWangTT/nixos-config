@@ -1,6 +1,20 @@
 { config, pkgs, ... }:
 
+let
+  firefox-gnome-theme = pkgs.fetchFromGitHub {
+    owner = "rafaelmardojai";
+    repo = "firefox-gnome-theme";
+    rev = "bad853333d9021e7012adb9b8fbfe7a7003f26bc";
+    hash = "sha256-M+Cw6vh7xCDmIhyVuEPNmaNVUwpmdFQq8
+zlsXZTKees=";
+  };
+in
 {
+  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme" = {
+    source = "${firefox-gnome-theme}";
+    recursive = true;
+  };
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
@@ -109,7 +123,7 @@
           "gnomeTheme.symbolicTabIcons" = true;
         };
         userChrome = ''
-          @import "firefox-gnome-theme-120/userChrome.css";
+          @import "firefox-gnome-theme/userChrome.css";
 
           #tabbrowser-tabs tab,
           #tabbrowser-tabs tab ~ toolbarbutton,
@@ -118,7 +132,7 @@
           }
         '';
         userContent = ''
-          @import "firefox-gnome-theme-120/userContent.css";
+          @import "firefox-gnome-theme/userContent.css" ;
         '';
       };
     };

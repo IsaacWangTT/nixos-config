@@ -118,7 +118,7 @@ in
 
       bind = $mainMod SHIFT, C, exec, hyprpicker -a
       bind = CTRL, F1, exec, grimblast --notify copy area
-      bind = CTRL SHIFT, F1, exec, grimblast --notify save area $HOME/Pictures/Screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
+      bind = CTRL SHIFT, F1, exec, grimblast --notify copysave area $HOME/Pictures/Screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
 
       #------------#
       # move focus #

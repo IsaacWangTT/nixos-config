@@ -12,6 +12,7 @@
     # System
     clamav
     clamtk
+    mesa-demos
     xfce.catfish
     gnome-solanum
     baobab

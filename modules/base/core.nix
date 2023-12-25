@@ -59,6 +59,7 @@
       xdg-utils
       neovim
       neofetch
+      nix-output-monitor
       psmisc
       timeshift
 
