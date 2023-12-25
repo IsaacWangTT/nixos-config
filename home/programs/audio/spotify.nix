@@ -25,8 +25,8 @@
     ];
     enabledExtensions = with homeFlakePkgs.spicetify-nix.extensions; [
       fullAppDisplay
-      autoVolume
       groupSession
+      lastfm
     ];
   };
 }
