@@ -28,7 +28,7 @@
       package = pkgs.papirus-icon-theme;
     };
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Maple Mono SC NF";
       size = 12;
     };
     gtk4.extraConfig = {

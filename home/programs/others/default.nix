@@ -16,6 +16,7 @@
     xfce.catfish
     gnome-solanum
     baobab
+    dialect
     snapshot
 
     # Software
@@ -32,6 +33,7 @@
 
     gnome-calculator
     gnome-clocks
+    gnome-sound-recorder
     gnome-system-monitor
     gnome-weather
   ]);

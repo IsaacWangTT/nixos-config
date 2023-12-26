@@ -1,7 +1,7 @@
 {
   programs.wlogout.style = ''
     * {
-      font-family: "JetBrainsMono Nerd Font";
+      font-family: monospace;
       font-size: 15px;
       font-weight: bold;
     }

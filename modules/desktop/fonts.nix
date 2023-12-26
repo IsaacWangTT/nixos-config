@@ -4,10 +4,12 @@
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
+      maple-mono-SC-NF
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
       noto-fonts-extra
+      sarasa-gothic
       source-han-sans
       source-han-mono
       source-han-serif
@@ -25,8 +27,8 @@
       defaultFonts = {
         emoji = [ "Noto Color Emoji" ];
         monospace = [
-          "Noto Sans Mono CJK SC"
-          "FiraCode Nerd Font Mono"
+          "Maple Mono SC NF"
+          "Sarasa Mono SC"
           "JetBrainsMono Nerd Font Mono"
         ];
         sansSerif = [

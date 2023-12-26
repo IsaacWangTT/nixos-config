@@ -5,7 +5,7 @@
 
   programs.kitty = {
     enable = true;
-    font.name = "JetBrainsMono Nerd Font";
+    font.name = "monospace";
     font.size = 12;
     theme = "Catppuccin-Mocha";
     settings = {
