@@ -31,8 +31,26 @@
         src = pkgs.fetchFromGitHub {
           owner = "pure-fish";
           repo = "pure";
-          rev = "92965b98ba88874d808090794e0fde4d55e4d561";
-          sha256 = "Qx6jCOb5z1gweMmx+xyFjBp+J3G88qjJ12knI0yUDyQ=";
+          rev = "v4.8.2";
+          hash = "sha256-Qx6jCOb5z1gweMmx+xyFjBp+J3G88qjJ12knI0yUDyQ=";
+        };
+      }
+      {
+        name = "plugin-bak";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-bak";
+          rev = "93ce665e1e0ae405a4bbee102f782646e03cdfb6";
+          hash = "sha256-5BeSsy2JFkaKfXOtscJZVoaSK4FO8H6MXuV43uKd4TI=";
+        };
+      }
+      {
+        name = "plugin-bang-bang";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-bang-bang";
+          rev = "ec991b80ba7d4dda7a962167b036efc5c2d79419";
+          hash = "sha256-oPPCtFN2DPuM//c48SXb4TrFRjJtccg0YPXcAo0Lxq0=";
         };
       }
     ];
