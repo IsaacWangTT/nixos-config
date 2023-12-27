@@ -30,11 +30,12 @@
           "Maple Mono SC NF"
           "Sarasa Mono SC"
           "JetBrainsMono Nerd Font Mono"
+          "Noto Sans Mono CJK SC"
+          "Source Han Mono SC"
         ];
         sansSerif = [
           "Noto Sans CJK SC"
           "Source Han Sans SC"
-          "FiraCode Nerd Font"
         ];
         serif = [
           "Noto Serif CJK SC"
