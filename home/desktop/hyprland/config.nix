@@ -2,12 +2,12 @@
 
 let
   backlightOnOff = pkgs.writeShellScriptBin "backlightOnOff" ''
-    if [ $(light -s sysfs/leds/rgb:kbd_backlight -G) != 0.00 ]; then
-      light -s sysfs/leds/rgb:kbd_backlight -O
+    if [ $(light -s sysfs/leds/rgb:kbd_backlight -G) == 0.00 ]; then
+      sleep 0.1 &
+      light -s sysfs/leds/rgb:kbd_backlight -S 100.00 &
+    else
       sleep 0.1 &
       light -s sysfs/leds/rgb:kbd_backlight -S 0.00 &
-    else
-      light -s sysfs/leds/rgb:kbd_backlight -I
     fi
   '';
   touchpadOnOff = pkgs.writeShellScriptBin "touchpadOnOff" ''
@@ -186,6 +186,7 @@ in
       exec-once = valent --gapplication-service
       exec-once = wlsunset -l 22.5 -L 114.0
       exec-once = ${sleep}/bin/sleep
+      exec-once = light -s sysfs/leds/rgb:kbd_backlight -S 0.00
       exec-once = ${launch_waybar}/bin/launch_waybar
 
       #---------------#
