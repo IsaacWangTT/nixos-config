@@ -48,7 +48,7 @@
       pkgs.qt6.qtwayland
 
       # Xorg Tools
-      pkgs.xorg.xeyes
+      xorg.xeyes
       xorg.xeyes
       xorg.xhost
 

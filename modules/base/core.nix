@@ -61,7 +61,6 @@
       neofetch
       nix-output-monitor
       psmisc
-      timeshift
 
       # Unzip Tools
       p7zip

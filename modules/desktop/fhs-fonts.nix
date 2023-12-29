@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  systemd.user.extraConfig = ''
-    DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-  '';
   system.fsPackages = [ pkgs.bindfs ];
   fileSystems =
     let
@@ -15,6 +12,7 @@
       aggregatedIcons = pkgs.buildEnv {
         name = "system-icons";
         paths = with pkgs; [
+          catppuccin-cursors.mochaBlue
           papirus-icon-theme
         ];
         pathsToLink = [ "/share/icons" ];
