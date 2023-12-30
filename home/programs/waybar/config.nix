@@ -118,7 +118,17 @@
         "interval" = 1;
         "format" = " {:%I:%M %p}";
         "tooltip" = true;
-        "tooltip-format" = "{:%F %r}";
+        "tooltip-format" = "<tt>{calendar}</tt>";
+        "calendar" = {
+          "weeks-pos" = "right";
+          "format" = {
+            "months" = "<span color='#f5e0dc'><b>{}</b></span>";
+            "days" = "<span color='#cdd6f4'><b>{}</b></span>";
+            "weeks" = "<span color='#94e2d5'><b>W{}</b></span>";
+            "weekdays" = "<span color='#f9e2af'><b>{}</b></span>";
+            "today" = "<span color='#f38ba8'><b><u>{}</u></b></span>";
+          };
+        };
       };
 
       "tray" = {
