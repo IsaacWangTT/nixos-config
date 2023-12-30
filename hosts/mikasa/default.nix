@@ -57,4 +57,31 @@
   ];
 
   virtualisation.docker.storageDriver = "btrfs";
+
+  services = {
+    btrfs = {
+      autoScrub = {
+        enable = true;
+        interval = "weekly";
+        fileSystems = [ "/" "/home" ];
+      };
+    };
+    snapper = {
+      configs = {
+        root = {
+          SUBVOLUME = "/";
+          ALLOW_GROUPS = [ "wheel" ];
+          TIMELINE_CREATE = true;
+          TIMELINE_CLEANUP = true;
+        };
+        home = {
+          SUBVOLUME = "/home";
+          ALLOW_GROUPS = [ "wheel" ];
+          TIMELINE_CREATE = true;
+          TIMELINE_CLEANUP = true;
+        };
+      };
+      cleanupInterval = "2d";
+    };
+  };
 }

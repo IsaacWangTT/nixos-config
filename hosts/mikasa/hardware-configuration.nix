@@ -9,58 +9,64 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
-
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-label/myLinux";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+      kernelModules = [ ];
     };
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+  };
 
-  fileSystems."/efi" =
-    {
-      device = "/dev/disk/by-uuid/1518-92EC";
-      fsType = "vfat";
-    };
+  fileSystems = {
+    "/" =
+      {
+        device = "/dev/disk/by-label/myLinux";
+        fsType = "btrfs";
+        options = [ "subvol=@" "compress=zstd" ];
+      };
 
-  fileSystems."/home" =
-    {
-      device = "/dev/disk/by-label/myLinuxHome";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
+    "/efi" =
+      {
+        device = "/dev/disk/by-uuid/1518-92EC";
+        fsType = "vfat";
+      };
 
-  fileSystems."/swap" =
-    {
-      device = "/dev/disk/by-label/myLinux";
-      fsType = "btrfs";
-      options = [ "subvol=@swap" ];
-    };
+    "/home" =
+      {
+        device = "/dev/disk/by-label/myLinuxHome";
+        fsType = "btrfs";
+        options = [ "subvol=@home" "compress=zstd" ];
+      };
 
-  fileSystems."/media/windows/c" =
-    {
-      device = "/dev/disk/by-label/myWindows";
-      fsType = "ntfs-3g";
-    };
+    "/swap" =
+      {
+        device = "/dev/disk/by-label/myLinux";
+        fsType = "btrfs";
+        options = [ "subvol=@swap" "noatime" ];
+      };
 
-  fileSystems."/media/windows/d" =
-    {
-      device = "/dev/disk/by-label/myWindowsFile";
-      fsType = "ntfs-3g";
-    };
+    "/media/windows/c" =
+      {
+        device = "/dev/disk/by-label/myWindows";
+        fsType = "ntfs-3g";
+      };
 
-  fileSystems."/media/windows/e" =
-    {
-      device = "/dev/disk/by-label/myWindowsGame";
-      fsType = "ntfs-3g";
-    };
+    "/media/windows/d" =
+      {
+        device = "/dev/disk/by-label/myWindowsFile";
+        fsType = "ntfs-3g";
+      };
+
+    "/media/windows/e" =
+      {
+        device = "/dev/disk/by-label/myWindowsGame";
+        fsType = "ntfs-3g";
+      };
+  };
 
   swapDevices = [
     {
