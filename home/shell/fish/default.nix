@@ -19,6 +19,7 @@
       ls = "exa";
       n = "fastfetch";
       top = "btop";
+      lg = "lazygit";
     };
     functions = {
       f = ''

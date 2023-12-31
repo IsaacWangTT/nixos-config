@@ -26,6 +26,7 @@
     enabledExtensions = with homeFlakePkgs.spicetify-nix.extensions; [
       fullAppDisplay
       groupSession
+      keyboardShortcut
       lastfm
     ];
   };

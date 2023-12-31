@@ -37,6 +37,7 @@ in
           tree-style-tab
           tst-wheel-and-double
           ublock-origin
+          vimium
         ];
         search = {
           default = "Google";
