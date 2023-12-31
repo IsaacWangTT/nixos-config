@@ -42,6 +42,13 @@
         options = [ "subvol=@swap" "noatime" ];
       };
 
+    "/var/log" =
+      {
+        device = "/dev/disk/by-label/myLinux";
+        fsType = "btrfs";
+        options = [ "subvol=@var_log" "nodatacow" ];
+      };
+
     "/.snapshots" =
       {
         device = "/dev/disk/by-label/myLinux";
