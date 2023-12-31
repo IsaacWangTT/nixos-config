@@ -102,6 +102,7 @@ in
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, T, exec, kitty
       bind = $mainMod, E, exec, nautilus
+      bind = $mainMod SHIFT, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, L, exec, wlogout --protocol layer-shell
       bind = $mainMod, C, exec, ${caffeine}/bin/caffeine
@@ -191,6 +192,7 @@ in
       # auto start #
       #------------#
       exec-once = hyprpaper & mako
+      exec-once = wl-paste --watch cliphist store
       exec-once = valent --gapplication-service
       exec-once = wlsunset -l 22.5 -L 114.0
       exec-once = ${sleep}/bin/sleep
