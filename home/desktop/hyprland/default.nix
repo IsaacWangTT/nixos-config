@@ -19,9 +19,9 @@
   };
 
   home.packages = with pkgs; [
-    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
-    inputs.hypr-hyprpicker.packages.${pkgs.system}.hyprpicker
-    inputs.hypr-hyprpaper.packages.${pkgs.system}.hyprpaper
+    grimblast
+    hyprpicker
+    hyprpaper
     playerctl
     pamixer
   ] ++

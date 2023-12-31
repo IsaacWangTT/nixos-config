@@ -81,9 +81,6 @@
 
     # Desktop Environment
     hyprland.url = "github:hyprwm/Hyprland"; # Hyprland
-    hypr-contrib.url = "github:hyprwm/contrib"; # contrib
-    hypr-hyprpaper.url = "github:hyprwm/hyprpaper"; # hyprpaper
-    hypr-hyprpicker.url = "github:hyprwm/hyprpicker"; # hyprpicker
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland"; # Wayland Packages
 
     # Others
