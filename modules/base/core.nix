@@ -62,11 +62,12 @@
       nix-output-monitor
       psmisc
 
-      # Unzip Tools
+      # File Tools
       p7zip
       unzip
       zip
       rar
+      trash-cli
     ];
   };
 

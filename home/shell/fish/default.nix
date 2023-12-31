@@ -20,6 +20,7 @@
       n = "fastfetch";
       top = "btop";
       lg = "lazygit";
+      ra = "ranger";
     };
     functions = {
       f = ''

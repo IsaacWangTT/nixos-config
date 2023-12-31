@@ -149,6 +149,14 @@ in
       # $w3 = hyprctl hyprpaper wallpaper "eDP-1, ~/Pictures/Wallpapers/3.jpg"
       # $w4 = hyprctl hyprpaper wallpaper "eDP-1, ~/Pictures/Wallpapers/4.jpg"
 
+      #----------------------------------#
+      # move window in current workspace #
+      #----------------------------------#
+      bind = $mainMod SHIFT, left, movewindow, l
+      bind = $mainMod SHIFT, right, movewindow, r
+      bind = $mainMod SHIFT, up, movewindow, u
+      bind = $mainMod SHIFT, down, movewindow, d
+
       #-------------------#
       # switch workspaces #
       #-------------------#
