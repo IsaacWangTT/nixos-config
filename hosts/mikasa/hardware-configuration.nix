@@ -22,24 +22,17 @@
   };
 
   fileSystems = {
-    "/" =
-      {
-        device = "/dev/disk/by-label/myLinux";
-        fsType = "btrfs";
-        options = [ "subvol=@" "compress=zstd" ];
-      };
-
     "/efi" =
       {
         device = "/dev/disk/by-uuid/1518-92EC";
         fsType = "vfat";
       };
 
-    "/home" =
+    "/" =
       {
-        device = "/dev/disk/by-label/myLinuxHome";
+        device = "/dev/disk/by-label/myLinux";
         fsType = "btrfs";
-        options = [ "subvol=@home" "compress=zstd" ];
+        options = [ "subvol=@" "noatime" "space_cache=v2" "compress=zstd" "discard=async" ];
       };
 
     "/swap" =
@@ -47,6 +40,27 @@
         device = "/dev/disk/by-label/myLinux";
         fsType = "btrfs";
         options = [ "subvol=@swap" "noatime" ];
+      };
+
+    "/.snapshots" =
+      {
+        device = "/dev/disk/by-label/myLinux";
+        fsType = "btrfs";
+        options = [ "subvol=@snapshots" ];
+      };
+
+    "/home" =
+      {
+        device = "/dev/disk/by-label/myLinuxHome";
+        fsType = "btrfs";
+        options = [ "subvol=@home" "noatime" "space_cache=v2" "compress=zstd" "autodefrag" ];
+      };
+
+    "/home/.snapshots" =
+      {
+        device = "/dev/disk/by-label/myLinuxHome";
+        fsType = "btrfs";
+        options = [ "subvol=@snapshots" ];
       };
 
     "/media/windows/c" =
