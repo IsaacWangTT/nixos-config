@@ -16,6 +16,10 @@
       };
       timeout = 10;
     };
+    tmp = {
+      useTmpfs = true;
+      cleanOnBoot = true;
+    };
     resumeDevice = "/dev/disk/by-label/myLinux";
   };
 
