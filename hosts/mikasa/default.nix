@@ -29,6 +29,7 @@
       "splash"
       "resume_offset=7611648"
       "nvidia-drm.modest=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "i8042.reset"
       "i8042.nomux"
       "i8042.nopnp"
