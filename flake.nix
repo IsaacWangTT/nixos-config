@@ -130,6 +130,10 @@
       url = "github:catppuccin/waybar";
       flake = false;
     };
+    catppuccin-lazygit = {
+      url = "github:catppuccin/lazygit";
+      flake = false;
+    };
   };
 
   nixConfig = {

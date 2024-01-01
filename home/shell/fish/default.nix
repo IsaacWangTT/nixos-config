@@ -9,8 +9,6 @@
     enable = true;
     interactiveShellInit = ''
       set -g fish_greeting ""
-      set -g pure_symbol_prompt " ❯"
-      set -g pure_symbol_ssh_prefix " "
     '';
     shellAliases = {
       l = "ls -ahl";
@@ -28,15 +26,6 @@
       '';
     };
     plugins = [
-      {
-        name = "pure";
-        src = pkgs.fetchFromGitHub {
-          owner = "pure-fish";
-          repo = "pure";
-          rev = "v4.8.2";
-          hash = "sha256-Qx6jCOb5z1gweMmx+xyFjBp+J3G88qjJ12knI0yUDyQ=";
-        };
-      }
       {
         name = "plugin-bak";
         src = pkgs.fetchFromGitHub {
