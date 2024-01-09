@@ -7,7 +7,13 @@
     in
     {
       mikasa = nixosSystem {
-        specialArgs = { inherit vars nixosFlakePkgs; };
+        specialArgs = {
+          inherit vars nixosFlakePkgs;
+          pkgs-stable = import inputs.nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./mikasa
           ../modules/desktop

@@ -40,7 +40,7 @@
           };
           secret = with pkgs; mkShell {
             name = "secret";
-            nativeBuildInputs = [ sops age neovim ssh-to-age ];
+            nativeBuildInputs = with pkgs; [ sops age neovim ssh-to-age ];
             shellHook = ''
               exec fish
               export $EDITOR=nvim
@@ -61,6 +61,7 @@
     # Software Packages
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # Chaotic's Nyx
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Nixpkgs
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11"; # Nixpkgs-stable
     nur.url = "github:nix-community/NUR"; # NUR
 
     # System Tools

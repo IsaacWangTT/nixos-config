@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs-stable, pkgs, ... }:
 
 {
   sops.secrets."config.dae" = {
@@ -7,7 +7,7 @@
 
   services.dae = {
     enable = true;
-    package = pkgs.dae;
+    package = pkgs-stable.dae;
     configFile = config.sops.secrets."config.dae".path;
     assets = with pkgs; [ v2ray-geoip v2ray-domain-list-community ];
   };
