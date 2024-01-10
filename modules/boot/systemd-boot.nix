@@ -5,6 +5,4 @@
       configurationLimit = 3;
     };
   };
-
-  environment.systemPackages = [ pkgs.sbctl ];
 }

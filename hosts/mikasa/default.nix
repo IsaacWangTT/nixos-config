@@ -20,14 +20,14 @@
       useTmpfs = true;
       cleanOnBoot = true;
     };
-    resumeDevice = "/dev/disk/by-label/myLinux";
+    # resumeDevice = "/dev/disk/by-label/myLinux";
   };
 
   boot = {
     kernelParams = [
       "quiet"
       "splash"
-      "resume_offset=7611648"
+      # "resume_offset=7611648"
       "nvidia-drm.modest=1"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "i8042.reset"
@@ -71,22 +71,22 @@
         fileSystems = [ "/" "/home" ];
       };
     };
-    snapper = {
-      configs = {
-        root = {
-          SUBVOLUME = "/";
-          ALLOW_GROUPS = [ "wheel" ];
-          TIMELINE_CREATE = true;
-          TIMELINE_CLEANUP = true;
-        };
-        home = {
-          SUBVOLUME = "/home";
-          ALLOW_GROUPS = [ "wheel" ];
-          TIMELINE_CREATE = true;
-          TIMELINE_CLEANUP = true;
-        };
-      };
-      cleanupInterval = "2d";
-    };
+    #   snapper = {
+    #     configs = {
+    #       root = {
+    #         SUBVOLUME = "/";
+    #         ALLOW_GROUPS = [ "wheel" ];
+    #         TIMELINE_CREATE = true;
+    #         TIMELINE_CLEANUP = true;
+    #       };
+    #       home = {
+    #         SUBVOLUME = "/home";
+    #         ALLOW_GROUPS = [ "wheel" ];
+    #         TIMELINE_CREATE = true;
+    #         TIMELINE_CLEANUP = true;
+    #       };
+    #     };
+    #     cleanupInterval = "2d";
+    #   };
   };
 }

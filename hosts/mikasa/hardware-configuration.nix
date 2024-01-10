@@ -35,39 +35,17 @@
         options = [ "subvol=@" "noatime" "space_cache=v2" "compress=zstd" "discard=async" ];
       };
 
-    "/swap" =
-      {
-        device = "/dev/disk/by-label/myLinux";
-        fsType = "btrfs";
-        options = [ "subvol=@swap" "noatime" ];
-      };
-
-    "/var/log" =
-      {
-        device = "/dev/disk/by-label/myLinux";
-        fsType = "btrfs";
-        options = [ "subvol=@var_log" "nodatacow" ];
-      };
-
-    "/.snapshots" =
-      {
-        device = "/dev/disk/by-label/myLinux";
-        fsType = "btrfs";
-        options = [ "subvol=@snapshots" ];
-      };
+    "/nix" = {
+      device = "/dev/disk/by-label/myLinux";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" "noatime" ];
+    };
 
     "/home" =
       {
         device = "/dev/disk/by-label/myLinuxHome";
         fsType = "btrfs";
         options = [ "subvol=@home" "noatime" "space_cache=v2" "compress=zstd" "autodefrag" ];
-      };
-
-    "/home/.snapshots" =
-      {
-        device = "/dev/disk/by-label/myLinuxHome";
-        fsType = "btrfs";
-        options = [ "subvol=@snapshots" ];
       };
 
     "/media/windows/c" =
@@ -89,13 +67,7 @@
       };
   };
 
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-      size = 8192;
-      priority = 30;
-    }
-  ];
+  swapDevices = [ ];
 
   zramSwap = {
     enable = true;

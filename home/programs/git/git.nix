@@ -6,12 +6,10 @@
     userName = "${vars.fullName}";
     userEmail = "${vars.email}";
     extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
+      init.defaultBranch = "main";
       url = {
-        "ssh://git@github.com:IsaacWangTT" = {
-          insteadOf = "https://github.com/IsaacWangTT/";
+        "ssh://git@github.com/IsaacWangTT" = {
+          insteadOf = "https://github.com/IsaacWangTT";
         };
       };
     };

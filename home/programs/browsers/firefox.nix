@@ -103,6 +103,8 @@ in
         };
         settings = {
           "browser.startup.homepage" = "https://homepage-lovat-ten.vercel.app/";
+          "browser.search.region" = "US";
+          "doh-rollout.home-region" = "US";
           "general.autoScroll" = true;
           "browser.tabs.warnOnClose" = true;
           "toolkit.tabbox.switchByScrolling" = true;

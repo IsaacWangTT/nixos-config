@@ -1,5 +1,5 @@
 keys:
-  - &mikasa age1672sdmjxg79ulkq5xukqn7j9d635hqwtwyd6gm59yd2pex3haaksaf585f
+  - &mikasa age13pnzjxgg74lypj3l0e28ssmyutt3hhhwh9uxae0g26gynchh8u8q474kxc
 creation_rules:
   - path_regex: secrets/[^/]+\.yaml$
     key_groups:

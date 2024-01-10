@@ -1,6 +1,9 @@
 deploy:
 	nixos-rebuild switch --flake .#mikasa --use-remote-sudo
 
+boot:
+	nixos-rebuild boot --flake .#mikasa --use-remote-sudo
+
 test:
 	nixos-rebuild test --flake .#mikasa --use-remote-sudo
 
