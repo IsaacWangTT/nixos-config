@@ -16,18 +16,14 @@
       };
       timeout = 10;
     };
-    tmp = {
-      useTmpfs = true;
-      cleanOnBoot = true;
-    };
-    # resumeDevice = "/dev/disk/by-label/myLinux";
+    resumeDevice = "/dev/disk/by-label/myLinux";
   };
 
   boot = {
     kernelParams = [
       "quiet"
       "splash"
-      # "resume_offset=7611648"
+      "resume_offset=4878994"
       "nvidia-drm.modest=1"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "i8042.reset"

@@ -31,15 +31,22 @@
     "/" =
       {
         device = "/dev/disk/by-label/myLinux";
-        fsType = "btrfs";
-        options = [ "subvol=@" "noatime" "space_cache=v2" "compress=zstd" "discard=async" ];
+        fsType = "tmpfs";
+        options = [ "size=25%" "mode=755" ];
       };
 
     "/nix" = {
       device = "/dev/disk/by-label/myLinux";
       fsType = "btrfs";
-      options = [ "subvol=@nix" "noatime" ];
+      options = [ "subvol=@nix" "noatime" "space_cache=v2" "compress=zstd" "discard=async" ];
     };
+
+    "/swap" =
+      {
+        device = "/dev/disk/by-label/myLinux";
+        fsType = "btrfs";
+        options = [ "subvol=@swap" "noatime" ];
+      };
 
     "/home" =
       {
@@ -67,7 +74,13 @@
       };
   };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8192;
+      priority = 30;
+    }
+  ];
 
   zramSwap = {
     enable = true;

@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   sops = {
@@ -8,6 +8,19 @@
       keyFile = "/var/lib/sops-nix/key.txt";
       generateKey = true;
     };
+  };
+
+  systemd.services.decrypt-sops = {
+    description = "Decrypt sops secrets";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network-online.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      Restart = "on-failure";
+      RestartSec = "2s";
+    };
+    script = config.system.activationScripts.setupSecrets.text;
   };
 
   networking.networkmanager.enable = true;
@@ -61,6 +74,7 @@
       neofetch
       nix-output-monitor
       psmisc
+      sops
 
       # File Tools
       p7zip
@@ -72,11 +86,20 @@
   };
 
   programs.fish.enable = true;
-  users.users.${vars.user} = {
-    isNormalUser = true;
-    description = "${vars.fullName}";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
-    shell = pkgs.fish;
+  users = {
+    mutableUsers = false;
+    users = {
+      root = {
+        initialHashedPassword = "$y$j9T$0zAkIokVEpWcBLVuApCjS0$FKU4.mJaDq2rtO333x7bHYTbE5P/uAPi1xr9kgPYlF8";
+      };
+      ${vars.user} = {
+        initialHashedPassword = "$y$j9T$0zAkIokVEpWcBLVuApCjS0$FKU4.mJaDq2rtO333x7bHYTbE5P/uAPi1xr9kgPYlF8";
+        isNormalUser = true;
+        description = "${vars.fullName}";
+        extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+        shell = pkgs.fish;
+      };
+    };
   };
 
   system.stateVersion = "24.05";

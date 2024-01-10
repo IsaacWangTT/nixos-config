@@ -16,6 +16,7 @@
         };
         modules = [
           ./mikasa
+          ../modules/base/impermanence.nix
           ../modules/desktop
           ../modules/hardware
           ../modules/proxy

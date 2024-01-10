@@ -94,6 +94,7 @@ in
             };
 
             "Amazon.com".metaData.hidden = true;
+            "eBay".metaData.hidden = true;
             "Wikipedia (en)".metaData.hidden = true;
             "Google".metaData.alias = "@g";
           };

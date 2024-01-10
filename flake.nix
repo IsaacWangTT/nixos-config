@@ -71,6 +71,7 @@
       url = "github:nix-community/home-manager"; # Home Manager
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    impermanence.url = "github:nix-community/impermanence"; # Impermanence
     lanzaboote.url = "github:nix-community/lanzaboote"; # Secure Boot
     nixGL.url = "github:nix-community/nixGL"; # OpenGL
     nix-index-database = {
