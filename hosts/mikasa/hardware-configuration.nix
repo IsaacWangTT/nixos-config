@@ -59,19 +59,57 @@
       {
         device = "/dev/disk/by-label/myWindows";
         fsType = "ntfs-3g";
+        options = [ "rw" "uid=1000" ];
       };
 
     "/media/windows/d" =
       {
         device = "/dev/disk/by-label/myWindowsFile";
         fsType = "ntfs-3g";
+        options = [ "rw" "uid=1000" ];
       };
 
     "/media/windows/e" =
       {
         device = "/dev/disk/by-label/myWindowsGame";
         fsType = "ntfs-3g";
+        options = [ "rw" "uid=1000" ];
       };
+
+    "/media/remote/OneDrive_Personal" = {
+      device = "OneDrive_Personal:";
+      fsType = "rclone";
+      options = [
+        "rw"
+        "allow_other"
+        "_netdev"
+        "noauto"
+        "x-systemd.automount"
+
+        # rclone specific
+        "env.PATH=/run/wrappers/bin" # for fusermount3
+        "config=/etc/rclone.conf"
+        "cache_dir=/tmp/remote/OneDrive_Personal"
+      ];
+    };
+
+    "/media/remote/OneDrive_E5" = {
+      device = "OneDrive_E5:";
+      fsType = "rclone";
+      options = [
+        "rw"
+        "allow_other"
+        "_netdev"
+        "noauto"
+        "x-systemd.automount"
+
+        # rclone specific
+        "env.PATH=/run/wrappers/bin" # for fusermount3
+        "config=/etc/rclone.conf"
+        "cache_dir=/tmp/remote/OneDrive_E5"
+      ];
+    };
+
   };
 
   swapDevices = [

@@ -8,6 +8,8 @@
 
   networking.hostName = "mikasa";
 
+  system.fsPackages = [ pkgs.rclone ];
+
   boot = {
     loader = {
       efi = {
@@ -32,7 +34,7 @@
       "i8042.noloop"
     ];
     supportedFilesystems = [
-      "ext4"
+      "ext"
       "btrfs"
       "ntfs"
       "fat"
@@ -67,22 +69,5 @@
         fileSystems = [ "/" "/home" ];
       };
     };
-    #   snapper = {
-    #     configs = {
-    #       root = {
-    #         SUBVOLUME = "/";
-    #         ALLOW_GROUPS = [ "wheel" ];
-    #         TIMELINE_CREATE = true;
-    #         TIMELINE_CLEANUP = true;
-    #       };
-    #       home = {
-    #         SUBVOLUME = "/home";
-    #         ALLOW_GROUPS = [ "wheel" ];
-    #         TIMELINE_CREATE = true;
-    #         TIMELINE_CLEANUP = true;
-    #       };
-    #     };
-    #     cleanupInterval = "2d";
-    #   };
   };
 }
