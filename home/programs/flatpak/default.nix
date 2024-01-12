@@ -7,6 +7,9 @@
       # System
       "flathub:app/com.github.tchx84.Flatseal//stable"
 
+      # Music
+      "flathub:app/com.mastermindzh.tidal-hifi//stable"
+
       # Messager
       "flathub:app/com.qq.QQ//stable"
 
