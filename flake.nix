@@ -87,6 +87,7 @@
 
     # Others
     spicetify-nix.url = "github:the-argus/spicetify-nix"; # spicetify
+    flatpaks.url = "github:GermanBread/declarative-flatpak"; #Declarative flatpaks
 
     #####  Some non-flake repositories  #####
     # NvChad

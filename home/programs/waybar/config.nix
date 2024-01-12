@@ -120,7 +120,7 @@
         "tooltip" = true;
         "tooltip-format" = "<tt>{calendar}</tt>";
         "calendar" = {
-          "weeks-pos" = "right";
+          "weeks-pos" = "left";
           "format" = {
             "months" = "<span color='#f5e0dc'><b>{}</b></span>";
             "days" = "<span color='#cdd6f4'><b>{}</b></span>";
