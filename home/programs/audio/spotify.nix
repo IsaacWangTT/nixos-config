@@ -3,10 +3,12 @@
 {
   xdg.desktopEntries = {
     spotify = {
+      type = "Application";
       name = "Spotify";
       genericName = "Music Player";
       icon = "spotify-client";
       exec = "spotify %U --enable-wayland-ime";
+      terminal = false;
       mimeType = [ "x-scheme-handler/spotify" ];
       categories = [ "Audio" "Music" "Player" "AudioVideo" ];
     };

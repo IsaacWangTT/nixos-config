@@ -18,6 +18,7 @@
           ./mikasa
           ../modules/base/impermanence.nix
           ../modules/desktop
+          ../modules/desktop/firejail.nix
           ../modules/hardware
           ../modules/proxy
           ../modules/virtualisation

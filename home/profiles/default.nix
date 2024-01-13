@@ -22,7 +22,6 @@ let
     module_args
 
     inputs.chaotic.homeManagerModules.default
-    inputs.flatpaks.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.nur.hmModules.nur
