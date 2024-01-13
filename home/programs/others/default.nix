@@ -22,6 +22,7 @@
     # Software
     libreoffice-fresh
     telegram-desktop
+    qq
 
     # Development
     scrcpy
