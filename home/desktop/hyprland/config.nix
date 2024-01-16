@@ -99,7 +99,7 @@ in
       #----------#
       # software #
       #----------#
-      bind = $mainMod, B, exec, firefox
+      bind = $mainMod, B, exec, nvidia-offload firefox
       bind = $mainMod, T, exec, kitty
       bind = $mainMod, E, exec, nautilus
       bind = $mainMod SHIFT, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
