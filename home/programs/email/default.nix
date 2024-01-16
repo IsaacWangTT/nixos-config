@@ -1,14 +1,10 @@
-{ vars, ... }:
-
 {
-  accounts.email.accounts.${vars.user} = {
-    primary = true;
-    address = "${vars.email}";
-    realName = "${vars.fullName}";
-    thunderbird.enable = true;
+  programs.thunderbird = {
+    enable = true;
+    profiles = {
+      "default" = {
+        isDefault = true;
+      };
+    };
   };
-
-  imports = [
-    ./thunderbird.nix
-  ];
 }

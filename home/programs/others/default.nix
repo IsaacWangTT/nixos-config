@@ -17,9 +17,11 @@
     gnome-solanum
     baobab
     dialect
+    fractal
     snapshot
 
     # Software
+    bitwarden
     libreoffice-fresh
     telegram-desktop
     qq
