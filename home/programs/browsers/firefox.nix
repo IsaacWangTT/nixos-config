@@ -117,6 +117,8 @@ in
           "privacy.resistFingerprinting.block_mozAddonManager" = true;
           "extensions.webextensions.restrictedDomains" = "";
           "signon.rememberSignons" = false;
+          "browser.search.separatePrivateDefault" = true;
+          "browser.search.separatePrivateDefault.ui.enabled" = true;
 
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "browser.uidensity" = 0;
