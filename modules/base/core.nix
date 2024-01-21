@@ -10,19 +10,6 @@
     };
   };
 
-  systemd.services.decrypt-sops = {
-    description = "Decrypt sops secrets";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network-online.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      Restart = "on-failure";
-      RestartSec = "2s";
-    };
-    script = config.system.activationScripts.setupSecrets.text;
-  };
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
