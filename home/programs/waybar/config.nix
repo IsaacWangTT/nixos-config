@@ -116,7 +116,7 @@
 
       "clock" = {
         "interval" = 1;
-        "format" = " {:%r}";
+        "format" = " {:%X}";
         "tooltip" = true;
         "tooltip-format" = "<tt>{calendar}</tt>";
         "calendar" = {
