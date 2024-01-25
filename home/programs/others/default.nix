@@ -1,13 +1,5 @@
 { pkgs, ... }:
 
-let
-  obsidian = pkgs.obsidian.override {
-    electron = pkgs.electron_25.overrideAttrs (_: {
-      preFixup = "patchelf --add-needed ${pkgs.libglvnd}/lib/libEGL.so.1 $out/bin/electron"; # NixOS/nixpkgs#272912
-      meta.knownVulnerabilities = [ ]; # NixOS/nixpkgs#273611
-    });
-  };
-in
 {
   xdg.desktopEntries = {
     obsidian = {
@@ -42,6 +34,13 @@ in
     bitwarden
     libreoffice-fresh
     motrix
+    (obsidian.override {
+      electron = pkgs.electron_25.overrideAttrs (_: {
+        preFixup = "patchelf --add-needed ${pkgs.libglvnd}/lib/libEGL.so.1 $out/bin/electron"; # NixOS/nixpkgs#272912
+        meta.knownVulnerabilities = [ ]; # NixOS/nixpkgs#273611
+      });
+    })
+
     telegram-desktop
     qq
 
@@ -58,6 +57,5 @@ in
     gnome-sound-recorder
     gnome-system-monitor
     gnome-weather
-  ]) ++
-  [ obsidian ];
+  ]);
 }
