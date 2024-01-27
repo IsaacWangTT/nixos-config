@@ -143,7 +143,7 @@
 
     substituters = [
       "https://isaacwangtt.cachix.org"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      # "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
       "https://hyprland.cachix.org"
     ];
