@@ -4,7 +4,7 @@
   imports = [
     ./layout.nix
     ./style.nix
-    ../../desktop/hyprland/scripts/myswaylock.nix
+    ../../desktop/hyprland/scripts.nix
   ];
 
   home.file = {

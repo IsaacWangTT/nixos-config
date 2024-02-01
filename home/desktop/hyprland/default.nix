@@ -4,9 +4,7 @@
   imports = [
     ./config.nix
     ./hyprpaper.nix
-    ./scripts/launch_waybar.nix
-    ./scripts/myswaylock.nix
-    ./scripts/sleep.nix
+    ./scripts.nix
   ];
 
   home.file = {

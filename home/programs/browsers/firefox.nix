@@ -34,11 +34,11 @@ in
           tab-session-manager
           tampermonkey
           translate-web-pages
-          tree-style-tab
           tst-wheel-and-double
           ublock-origin
           vimium
-        ];
+        ] ++
+        (with config.nur.repos.bandithedoge.firefoxAddons; [ tree-style-tab ]);
         search = {
           default = "Google";
           engines = {

@@ -1,4 +1,4 @@
-{ pkgs, launch_waybar, sleep, caffeine, ... }:
+{ pkgs, sleep, caffeine, ... }:
 
 let
   backlightOnOff = pkgs.writeShellScriptBin "backlightOnOff" ''
@@ -106,7 +106,7 @@ in
       bind = $mainMod, A, exec, rofi -show drun
       bind = $mainMod, L, exec, wlogout --protocol layer-shell
       bind = $mainMod, C, exec, ${caffeine}/bin/caffeine
-      bind = $mainMod CTRL, W, exec, ${launch_waybar}/bin/launch_waybar
+      bind = $mainMod CTRL, W, exec, systemctl restart --user waybar
 
       #--------#
       # motion #
@@ -197,7 +197,6 @@ in
       exec-once = wlsunset -l 22.5 -L 114.0
       exec-once = ${sleep}/bin/sleep
       exec-once = light -s sysfs/leds/rgb:kbd_backlight -S 0.00
-      exec-once = ${launch_waybar}/bin/launch_waybar
 
       #---------------#
       # resize window #

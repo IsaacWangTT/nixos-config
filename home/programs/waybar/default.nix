@@ -13,5 +13,9 @@
   programs.waybar = {
     enable = true;
     package = homeFlakePkgs.nixpkgs-wayland.waybar;
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };
   };
 }
