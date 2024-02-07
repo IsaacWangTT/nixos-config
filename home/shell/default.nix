@@ -1,7 +1,8 @@
 {
   imports = [
-    ./fish
     ./direnv
+    ./fish
+    ./nushell
     ./starship
   ];
 }
