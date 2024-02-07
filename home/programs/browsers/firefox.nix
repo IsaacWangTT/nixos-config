@@ -4,8 +4,8 @@ let
   firefox-gnome-theme = pkgs.fetchFromGitHub {
     owner = "rafaelmardojai";
     repo = "firefox-gnome-theme";
-    rev = "v121.1";
-    hash = "sha256-SYp0DRkO73i8XVyOdAlcP2ZItqx9DqraIEJy6mY/2Ng=";
+    rev = "v122";
+    hash = "sha256-QZk/qZQVt1X53peCqB2qmWhpA3xtAVgY95pebSKaTFU=";
   };
 in
 {
@@ -34,11 +34,11 @@ in
           tab-session-manager
           tampermonkey
           translate-web-pages
+          tree-style-tab
           tst-wheel-and-double
           ublock-origin
           vimium
-        ] ++
-        (with config.nur.repos.bandithedoge.firefoxAddons; [ tree-style-tab ]);
+        ];
         search = {
           default = "Google";
           engines = {

@@ -96,6 +96,10 @@
       flake = false;
     };
     #####  Color Schemes  #####
+    alacritty-theme = {
+      url = "github:alacritty/alacritty-theme";
+      flake = false;
+    };
     catppuccin-btop = {
       url = "github:catppuccin/btop";
       flake = false;
