@@ -11,14 +11,15 @@
       set -g fish_greeting ""
     '';
     shellAliases = {
-      l = "ls -ahl";
-      la = "exa -a --icons";
-      ll = "exa -l --icons";
-      ls = "exa";
+      l = "eza -ahl";
+      la = "eza -a";
+      ll = "eza -l";
+      ls = "eza";
+      tree = "eza --tree";
       n = "fastfetch";
       top = "btop";
       lg = "lazygit";
-      ra = "ranger";
+      jo = "joshuto";
     };
     functions = {
       f = ''
