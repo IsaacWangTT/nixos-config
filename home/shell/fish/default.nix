@@ -1,8 +1,9 @@
 { inputs, pkgs, ... }:
 
 {
-  home.file = {
-    ".config/fish/themes".source = "${inputs.catppuccin-fish}/themes";
+  home.file.".config/fish/themes" = {
+    source = "${inputs.catppuccin-fish}/themes";
+    recursive = true;
   };
 
   programs.fish = {

@@ -6,8 +6,9 @@
     ./style.nix
   ];
 
-  home.file = {
-    ".config/waybar/themes".source = "${inputs.catppuccin-waybar}/themes";
+  home.file.".config/waybar/themes" = {
+    source = "${inputs.catppuccin-waybar}/themes";
+    recursive = true;
   };
 
   programs.waybar = {

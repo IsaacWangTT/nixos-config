@@ -116,6 +116,10 @@
       url = "github:catppuccin/fish";
       flake = false;
     };
+    catppuccin-helix = {
+      url = "github:catppuccin/helix";
+      flake = false;
+    };
     catppuccin-hyprland = {
       url = "github:catppuccin/hyprland";
       flake = false;

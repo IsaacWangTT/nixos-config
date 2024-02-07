@@ -1,6 +1,9 @@
 { config, pkgs, inputs, ... }:
 {
-  home.file.".local/share/fcitx5/themes".source = "${inputs.catppuccin-fcitx5}/src";
+  home.file.".local/share/fcitx5/themes" = {
+    source = "${inputs.catppuccin-fcitx5}/src";
+    recursive = true;
+  };
 
   i18n.inputMethod = {
     enabled = "fcitx5";

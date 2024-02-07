@@ -1,7 +1,10 @@
 { inputs, ... }:
 
 {
-  home.file.".config/btop/themes".source = "${inputs.catppuccin-btop}/themes";
+  home.file.".config/btop/themes" = {
+    source = "${inputs.catppuccin-btop}/themes";
+    recursive = true;
+  };
 
   programs.btop = {
     enable = true;

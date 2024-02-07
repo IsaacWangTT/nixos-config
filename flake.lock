@@ -113,6 +113,22 @@
         "type": "github"
       }
     },
+    "catppuccin-helix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1697816303,
+        "narHash": "sha256-qEXhj/Mpm+aqThqEq5DlPJD8nsbPov9CNMgG9s4E02g=",
+        "owner": "catppuccin",
+        "repo": "helix",
+        "rev": "8313c7250fcbbb22c6680db332669073ec6b28c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "helix",
+        "type": "github"
+      }
+    },
     "catppuccin-hyprland": {
       "flake": false,
       "locked": {
@@ -1262,11 +1278,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1707279052,
-        "narHash": "sha256-gkgzQk/J92fXb6TVS+SqcEctGPVxyLd8ELoQuc+8z/Q=",
+        "lastModified": 1707284699,
+        "narHash": "sha256-tt2ZM+I23cEdYwqF0TgkttmgJytNfYbm4iguWuTYeEY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c893a063986c235396a6baca94a747bb879c1f5d",
+        "rev": "94ca168756e90b856bb94a40b0c4cbc403ec4c10",
         "type": "github"
       },
       "original": {
@@ -1329,6 +1345,7 @@
         "catppuccin-cava": "catppuccin-cava",
         "catppuccin-fcitx5": "catppuccin-fcitx5",
         "catppuccin-fish": "catppuccin-fish",
+        "catppuccin-helix": "catppuccin-helix",
         "catppuccin-hyprland": "catppuccin-hyprland",
         "catppuccin-kitty": "catppuccin-kitty",
         "catppuccin-lazygit": "catppuccin-lazygit",

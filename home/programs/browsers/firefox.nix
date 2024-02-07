@@ -9,10 +9,7 @@ let
   };
 in
 {
-  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme" = {
-    source = "${firefox-gnome-theme}";
-    recursive = true;
-  };
+  home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = firefox-gnome-theme;
 
   programs.firefox = {
     enable = true;

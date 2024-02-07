@@ -7,8 +7,9 @@
     ./scripts.nix
   ];
 
-  home.file = {
-    ".config/hypr/themes".source = "${inputs.catppuccin-hyprland}/themes";
+  home.file.".config/hypr/themes" = {
+    source = "${inputs.catppuccin-hyprland}/themes";
+    recursive = true;
   };
 
   wayland.windowManager.hyprland = {

@@ -1,11 +1,15 @@
 { inputs, pkgs, ... }:
 
 {
-  xdg.configFile = {
-    "nvim/init.lua".source = "${inputs.nvchad}/init.lua";
-    "nvim/lua/core".source = "${inputs.nvchad}/lua/core";
-    "nvim/lua/plugins".source = "${inputs.nvchad}/lua/plugins";
-    "nvim/lua/custom".source = ./nvchad_custom;
+  home.file = {
+    ".config/nvim" = {
+      source = inputs.nvchad;
+      recursive = true;
+    };
+    ".config/nvim/lua/custom" = {
+      source = ./nvchad_custom;
+      recursive = true;
+    };
   };
 
   programs = {

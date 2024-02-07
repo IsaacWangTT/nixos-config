@@ -7,9 +7,7 @@
     ../../desktop/hyprland/scripts.nix
   ];
 
-  home.file = {
-    ".config/wlogout/icons".source = ./icons;
-  };
+  home.file.".config/wlogout/icons".source = ./icons;
 
   programs.wlogout = {
     enable = true;
