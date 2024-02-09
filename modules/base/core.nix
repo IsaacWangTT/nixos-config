@@ -51,6 +51,12 @@
       gdb
       glib
       gnumake
+      binutils
+      coreutils
+      findutils
+      iputils
+      pciutils
+      psmisc
 
       # System Tools
       git
@@ -60,7 +66,6 @@
       neovim
       neofetch
       nix-output-monitor
-      psmisc
       sops
 
       # File Tools
