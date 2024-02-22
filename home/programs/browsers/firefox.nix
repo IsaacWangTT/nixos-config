@@ -21,10 +21,10 @@ in
     profiles = {
       "default" = {
         extensions = with config.nur.repos.rycee.firefox-addons; [
+          automatic-dark
           bitwarden
           darkreader
           duckduckgo-privacy-essentials
-          firefox-color
           gesturefy
           grammarly
           new-tab-override

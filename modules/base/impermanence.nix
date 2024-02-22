@@ -1,12 +1,12 @@
 {
   systemd.services.nix-daemon = {
-    environment = {
-      TMPDIR = "/var/cache/nix";
-    };
-    serviceConfig = {
-      CacheDirectory = "nix";
-    };
+    environment.TMPDIR = "/nix/cache";
   };
+
+  systemd.tmpfiles.rules = [
+    "d /nix/cache 0755 root root 1d"
+  ];
+
   environment.variables.NIX_REMOTE = "daemon";
   environment = {
     persistence."/nix/persistent" = {
