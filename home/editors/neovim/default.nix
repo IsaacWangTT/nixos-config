@@ -39,7 +39,7 @@
 
     # nix
     deadnix
-    nixd
+    # nixd
     nixpkgs-fmt
 
     # lua

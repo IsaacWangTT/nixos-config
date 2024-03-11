@@ -34,18 +34,13 @@
     bitwarden
     libreoffice-fresh
     motrix
-    (obsidian.override {
-      electron = pkgs.electron_25.overrideAttrs (_: {
-        preFixup = "patchelf --add-needed ${pkgs.libglvnd}/lib/libEGL.so.1 $out/bin/electron"; # NixOS/nixpkgs#272912
-        meta.knownVulnerabilities = [ ]; # NixOS/nixpkgs#273611
-      });
-    })
+    obsidian
 
     (telegram-desktop.overrideAttrs
       (_: rec {
 
         pname = "64Gram";
-        version = "1.1.14";
+        version = "1.1.15";
 
         src = fetchFromGitHub {
           owner = "TDesktop-x64";
@@ -53,7 +48,7 @@
           rev = "v${version}";
 
           fetchSubmodules = true;
-          hash = "sha256-+Cx4qh/zHyBYRBxeZLZATU2U/r8xF24R8AXnfFwl+Oo=";
+          hash = "sha256-3HLRv8RTyyfnjMF7w+euSOj6SbxlxOuczap5Nlizsvg=";
         };
       })
     )
