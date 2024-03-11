@@ -92,7 +92,7 @@
     # NvChad
     nvchad = {
       # Enhance Neovim
-      url = "github:NvChad/NvChad";
+      url = "github:NvChad/starter";
       flake = false;
     };
     #####  Color Schemes  #####

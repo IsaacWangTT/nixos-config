@@ -1347,16 +1347,16 @@
     "nvchad": {
       "flake": false,
       "locked": {
-        "lastModified": 1710081040,
-        "narHash": "sha256-cKwhZC9sevqK4aq6HmNqhniNKCIQuyxcaE5MYUIuxBU=",
+        "lastModified": 1710000362,
+        "narHash": "sha256-bQdO88FsBJBcxM43cyabqua9S3gWO/i2O0PL/8ulC7Y=",
         "owner": "NvChad",
-        "repo": "NvChad",
-        "rev": "cf1db9821a9bfe4e03eaa036fd791e55eae53117",
+        "repo": "starter",
+        "rev": "9d47133ba1433b07e1ac9e32fb110851cf1d6368",
         "type": "github"
       },
       "original": {
         "owner": "NvChad",
-        "repo": "NvChad",
+        "repo": "starter",
         "type": "github"
       }
     },
