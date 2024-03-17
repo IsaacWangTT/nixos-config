@@ -45,5 +45,8 @@
     allowBroken = true;
     allowUnsupportedSystem = true;
     allowUnfree = true;
+    permittedInsecurePackages = [
+      "nix-2.16.2"
+    ];
   };
 }

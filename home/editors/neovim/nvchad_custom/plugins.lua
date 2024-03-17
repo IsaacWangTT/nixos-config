@@ -9,6 +9,7 @@ local plugins = {
         "html",
         "json",
         "jsonc",
+        "lua",
         "python",
         "make",
         "markdown",
